@@ -1,23 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bg4xosb0ufpgi"]
+[gd_scene load_steps=2 format=3 uid="uid://bg4xosb0ufpgi"]
 
 [ext_resource type="Script" uid="uid://bo8etu6uo4v7g" path="res://actors/player/wheels/wheel.gd" id="1_q1ljj"]
 
-[sub_resource type="Curve" id="Curve_q1ljj"]
-_data = [Vector2(0.2, 0.7), 0.0, 0.0, 0, 0, Vector2(0.7, 0.2), 0.0, 0.0, 0, 0]
-point_count = 2
-metadata/_snap_enabled = true
-
-[sub_resource type="Curve" id="Curve_1usxk"]
-_data = [Vector2(0.1, 0.5), 0.0, 0.0, 0, 0, Vector2(0.4, 0.9), 0.0, 0.0, 0, 0, Vector2(0.7, 0.9), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
-metadata/_snap_enabled = true
-
 [node name="Wheel" type="RayCast3D"]
+target_position = Vector3(0, -2, 0)
 debug_shape_thickness = 1
 script = ExtResource("1_q1ljj")
-suspension_strength = 5.0
-steer_force = SubResource("Curve_q1ljj")
-engine_force = SubResource("Curve_1usxk")
 
 [node name="up" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, 0)

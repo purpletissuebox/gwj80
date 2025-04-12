@@ -1,19 +1,15 @@
 class_name Wheel extends RayCast3D
 
-@export var car_body:ShoppingCart
+@export var car:ShoppingCart
 @export var back_tire:bool
-@export_range(0,100,1) var suspension_strength:float
-@export_range(0,1,0.01) var suspension_damping:float
-@export var steer_force:Curve
-@export var engine_force:Curve
+@export var him:bool
 
 @onready var visual_r: RayCast3D = $right
 @onready var visual_g: RayCast3D = $up
 @onready var visual_b: RayCast3D = $fwd
 
+var spring_len_last_frame:float = 0.0
 var velocity:Vector3
-var g_position:Vector3
-var orientation:Basis
 
 func _physics_process(delta):
 	if !self.is_colliding():
@@ -22,51 +18,66 @@ func _physics_process(delta):
 		self.visual_r.target_position = Vector3.ZERO
 		return
 	
-	self.velocity = self.car_body.get_wheel_speed(self)
-	self.orientation = get_global_transform().basis
-	self.g_position = get_global_position()
-	
+	self.velocity = car.get_wheel_speed(self)
+	self.velocity.y = 0
 	var v:Vector3 = Vector3.ZERO
-	self.visual_g.target_position = self.suspension().length()*Vector3.UP
-	self.visual_b.target_position = self.engine().length()*Vector3.FORWARD
-	self.visual_r.target_position = self.steer(delta).length()*Vector3.RIGHT
+	if him:
+		print(str(self.velocity) + " " + str(self.velocity.length()))
+	#self.visual_g.target_position = self.suspension(delta, 1).length()*Vector3.UP
+	#self.visual_b.target_position = self.engine().length()*Vector3.RIGHT
+	#self.visual_r.target_position = self.steer(delta).length()*Vector3.BACK
 	
-	v += self.suspension()
+	v += self.suspension(delta, 0)
 	v += self.engine()
+	v += self.brake()
 	v += self.steer(delta)
-	self.car_body.apply_force(v, self.g_position)
+	car.apply_force(v, self.get_collision_point() - car.global_position)
+
+func suspension(delta, debug):
+	var upwards:Vector3 = self.global_basis.y
+	var ground_distance:float = (self.get_collision_point()).distance_to(self.global_position)
 	
-func suspension():
-	var upwards:Vector3 = self.orientation.y
-	var free_end:Vector3 = self.g_position + self.target_position
-	var col = self.get_collision_point()
-	var sink_length:float = (self.get_collision_point() - free_end).length()
+	var current_spring_length:float = clamp(ground_distance - car.wheel_radius, 0, car.rest_height)
+	var spring_force:float = car.spring_strength * (car.rest_height - current_spring_length)
+	var spring_velocity:float = (current_spring_length - self.spring_len_last_frame) / delta
 	
-	var spring_force = sink_length*self.suspension_strength
-	var damp_force = self.velocity.dot(upwards)*self.suspension_damping
+	if !debug:
+		self.spring_len_last_frame = current_spring_length
 	
-	return upwards*(spring_force - damp_force)
+	var damping_force:float = car.spring_dampening * spring_velocity
+	var suspension_force = basis.y * (spring_force - damping_force)
+	
+	return upwards*suspension_force
 
 func steer(delta):
-	return Vector3.ZERO
+	if self.velocity.length() < 0.001:
+		return Vector3.ZERO
+	
 	var amount = Input.get_axis("turn_right", "turn_left")
 	if !self.back_tire:
-		self.rotation.y = move_toward(self.rotation.y, amount*PI/8, delta*PI/4)
-		
-	var rightward = self.orientation.z
-	var slide_speed:float = self.velocity.dot(rightward)
-	var slide_ratio:float = slide_speed/self.velocity.length()
-	var grip_factor:float = self.steer_force.sample(slide_ratio)
-	var grip_speed_change:float = slide_speed*grip_factor*-1
+		self.rotation.y = move_toward(self.rotation.y, amount*PI/4, delta*PI/4)
+	var rightward = self.global_basis.z
+	var lateral_speed:float = self.velocity.dot(rightward)
+	
+	var slide_ratio:float = lateral_speed/self.velocity.length()
+	var grip_factor:float = car.grip_curve.sample(slide_ratio)
+	var grip_speed_change:float = -lateral_speed*grip_factor
 	var grip_acceleration:float = grip_speed_change/delta
-	return rightward*grip_acceleration
+	return rightward*grip_acceleration*car.steer_strength
 
 func engine():
-	return Vector3.ZERO
-	var amount = Input.get_axis("brake", "gas_pedal")
-	var forwards:Vector3 = self.orientation.x
+	if !self.back_tire:
+		return Vector3.ZERO
 	
-	var car_speed:float = self.car_body.linear_velocity.dot(self.car_body.global_basis.x)
-	var norm_speed:float = abs(car_speed)/300
-	var power = self.engine_force.sample(norm_speed)
-	return forwards*power*amount
+	var amount = Input.get_axis("brake", "gas_pedal")
+	var forwards:Vector3 = self.global_basis.x
+	
+	var car_speed:float = car.linear_velocity.dot(car.global_basis.x)
+	var norm_speed:float = abs(car_speed)/car.top_speed
+	var power = car.engine_curve.sample(norm_speed)
+	return forwards*power*amount*car.engine_strength
+
+func brake():
+	var forwards = self.global_basis.x
+	var brake_speed = car.get_wheel_speed(self).dot(forwards)
+	return forwards*brake_speed*car.friction*-1
