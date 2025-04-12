@@ -1,10 +1,17 @@
-[gd_scene format=3 uid="uid://8x44onkslefx"]
+[gd_scene load_steps=3 format=3 uid="uid://8x44onkslefx"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Texture2D" uid="uid://kg4kb5ek5tlg" path="res://ui/paper.png" id="2_ue2kl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r3gyj"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="UserInterface" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -14,29 +21,65 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="LeftMenu" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.25
 
-[node name="CurrentFoodContainer" type="SubViewportContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="CurrentFoodContainer" type="SubViewportContainer" parent="HBoxContainer/LeftMenu"]
 layout_mode = 2
 size_flags_vertical = 3
+stretch = true
 
-[node name="TimeContainer" type="CenterContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="TimeContainer" type="CenterContainer" parent="HBoxContainer/LeftMenu"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/TimeContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/LeftMenu/TimeContainer"]
 layout_mode = 2
-text = "5:00"
+text = "CURRENT TIME LEFT"
 
-[node name="MoneyContainer" type="CenterContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="MoneyContainer" type="CenterContainer" parent="HBoxContainer/LeftMenu"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/MoneyContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/LeftMenu/MoneyContainer"]
 layout_mode = 2
-text = "$4.99"
+text = "CURRENT MONEY"
 
-[node name="ArrowContainer" type="SubViewportContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="HBoxContainer/LeftMenu"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="ArrowContainer" type="SubViewportContainer" parent="HBoxContainer/LeftMenu"]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="Spacer" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="ShoppingList" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_bottom = 200
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/ShoppingList"]
+layout_mode = 2
+texture = ExtResource("2_ue2kl")
+expand_mode = 4
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/ShoppingList"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Beans
+Beans
+Beans
+Chips
+Bread
+Eggs
+(This will be images)"
+label_settings = SubResource("LabelSettings_r3gyj")
+horizontal_alignment = 1
