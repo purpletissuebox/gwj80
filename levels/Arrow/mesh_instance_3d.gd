@@ -1,7 +1,7 @@
 extends MeshInstance3D
 
 func _process(delta):
-	var target_plane = Plane(Vector3(0,0,-1), position.z)
+	var target_plane = Plane(Vector3(0,1,0), position.y)
 	var ray_len = 1000
 	var mp = get_viewport().get_mouse_position()
 	var from = $"../Camera3D".project_ray_origin(mp)

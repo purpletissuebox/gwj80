@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bowckl7frd3hn"]
+[gd_scene load_steps=4 format=3 uid="uid://bowckl7frd3hn"]
 
 [ext_resource type="Script" uid="uid://ctvpxhlwb6ims" path="res://levels/Arrow/mesh_instance_3d.gd" id="1_jub6x"]
 
-[sub_resource type="PrismMesh" id="PrismMesh_l3oxe"]
+[sub_resource type="BoxMesh" id="BoxMesh_jub6x"]
 
-[sub_resource type="Skin" id="Skin_l3oxe"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_jub6x"]
+[sub_resource type="PrismMesh" id="PrismMesh_jub6x"]
 
 [node name="Arrow" type="Control"]
 layout_mode = 3
@@ -23,15 +21,13 @@ size_flags_horizontal = 4
 transform = Transform3D(0.99989, 0, -0.0148348, 0, 1, 0, 0.0148348, 0, 0.99989, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Node3D"]
-transform = Transform3D(0.999946, -0.00909784, -0.00508517, 0.00967534, 0.628867, 0.777453, -0.00387525, -0.77746, 0.628921, 0.0283104, 2.20762, 1.72402)
+transform = Transform3D(0.999822, -0.0123975, -0.0142504, 0.0143869, 0.0109901, 0.999836, -0.0122389, -0.999863, 0.0111665, 0.0252827, 9.09581, 1.51995)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.999777, 0.0148335, -0.0150221, -0.0148336, -0.0127405, -0.999809, -0.0150221, 0.999809, -0.0125176, 0.0132419, 0, 0.892531)
-mesh = SubResource("PrismMesh_l3oxe")
-skin = SubResource("Skin_l3oxe")
+transform = Transform3D(1.0374, 0, -2.6077e-08, 0, 1, 0, 0, 0, 3.5207, 0.0215723, 0, 1.45401)
+mesh = SubResource("BoxMesh_jub6x")
 script = ExtResource("1_jub6x")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D/MeshInstance3D"]
-transform = Transform3D(0.605789, -0.000452715, -0.016738, 0.000277854, -0.986987, 0.0174391, -0.0179751, -0.0305139, -0.563826, -0.000103905, -1.32007, -0.00700337)
-mesh = SubResource("CylinderMesh_jub6x")
-skeleton = NodePath("../..")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/MeshInstance3D"]
+transform = Transform3D(0.0443055, -0.0490464, -0.87251, 3.28546, -6.4888e-05, 0.0117989, -0.00245251, -0.972992, 0.0439806, 0.0281665, 0, -0.906003)
+mesh = SubResource("PrismMesh_jub6x")
