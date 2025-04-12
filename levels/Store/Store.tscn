@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://6vn6k5tk72ed"]
+
+[ext_resource type="PackedScene" uid="uid://cxuddo8awlyri" path="res://levels/Store/Floor.tscn" id="1_55sxh"]
+[ext_resource type="PackedScene" uid="uid://d2d7kcx7u08vp" path="res://models/theGreatWallOfBEAN.glb" id="2_bwiar"]
+
+[node name="Store" type="Node3D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_55sxh")]
+
+[node name="theGreatWallOfBEAN" parent="." instance=ExtResource("2_bwiar")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.5, 3.5, -5)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.365347, 0.0260885, -0.930506, 0.226745, 0.967005, 0.116139, 0.902834, -0.253419, 0.347376, -20.8703, 10.6854, -7.6154)

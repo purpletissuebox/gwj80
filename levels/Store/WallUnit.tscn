@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://pk72lj82ssvm"]
+
+[ext_resource type="PackedScene" uid="uid://cfmq00p8x12ni" path="res://levels/Store/Wall.tscn" id="1_i7ugu"]
+
+[node name="WallUnit" type="Node3D"]
+
+[node name="LowerWall" parent="." instance=ExtResource("1_i7ugu")]
+transform = Transform3D(1.71962e-14, 3.93403e-07, 9, 9, -3.93403e-07, 0, 3.93403e-07, 9, -3.93403e-07, 0, 0, 0)
+
+[node name="UpperWall" parent="." instance=ExtResource("1_i7ugu")]
+transform = Transform3D(1.71962e-14, 3.93403e-07, 9, 9, -3.93403e-07, 0, 3.93403e-07, 9, -3.93403e-07, 0, 18, 0)
