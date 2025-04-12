@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c67sv6y1yi3jq"]
+
+[ext_resource type="Script" uid="uid://dev660anwir85" path="res://actors/shoppers/shopper.gd" id="1_ex0ru"]
+[ext_resource type="Texture2D" uid="uid://b7fcucht0ib1v" path="res://actors/shoppers/eldenRingHarrison.png" id="2_1t37o"]
+[ext_resource type="Script" uid="uid://brk4m3iufcy3i" path="res://actors/shoppers/shopper_controller.gd" id="3_8mqvt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_80c3a"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_ex0ru")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_80c3a")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+texture = ExtResource("2_1t37o")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="NavigationController" type="Node" parent="." node_paths=PackedStringArray("body")]
+script = ExtResource("3_8mqvt")
+body = NodePath("..")

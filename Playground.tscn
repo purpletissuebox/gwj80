@@ -1,12 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://qghlxw4m0nj6"]
+[gd_scene load_steps=4 format=3 uid="uid://qghlxw4m0nj6"]
 
-[ext_resource type="Script" uid="uid://dev660anwir85" path="res://shopper.gd" id="1_1cwr0"]
-[ext_resource type="Texture2D" uid="uid://b7fcucht0ib1v" path="res://eldenRingHarrison.png" id="1_80c3a"]
-[ext_resource type="Script" uid="uid://brk4m3iufcy3i" path="res://shopper_controller.gd" id="2_d17em"]
+[ext_resource type="PackedScene" uid="uid://c67sv6y1yi3jq" path="res://actors/shoppers/shopper.tscn" id="1_80c3a"]
 
 [sub_resource type="Environment" id="Environment_3invt"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_80c3a"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_1cwr0"]
 vertices = PackedVector3Array(1.25, 0.5, 0, 1.5, 0.5, 0.5, 4.5, 0.5, 0.5, 4.5, 0.5, -4.5, -4.5, 0.5, -4.5, -4.5, 0.5, 0, 1.25, 0.5, 2.25, 4.5, 0.5, 4.5, -4.5, 0.5, 2.25, -4.5, 0.5, 4.5)
@@ -20,23 +16,8 @@ environment = SubResource("Environment_3invt")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.442007, 0.897012, 0, -0.897012, -0.442007, 0, 3.7475, 0)
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_80c3a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01356, 0)
-script = ExtResource("1_1cwr0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-shape = SubResource("CapsuleShape3D_80c3a")
-
-[node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D"]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
-texture = ExtResource("1_80c3a")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="CharacterBody3D"]
-debug_enabled = true
-
-[node name="NavigationController" type="Node" parent="CharacterBody3D" node_paths=PackedStringArray("body")]
-script = ExtResource("2_d17em")
-body = NodePath("..")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_1cwr0")
