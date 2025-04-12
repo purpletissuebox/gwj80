@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bowckl7frd3hn"]
+
+[ext_resource type="Texture2D" uid="uid://drklurmkpqj8p" path="res://levels/Arrow/Arrow.png" id="1_jub6x"]
+[ext_resource type="Script" uid="uid://d3noy111v5cei" path="res://levels/Arrow/node_2d.gd" id="1_tjd28"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jub6x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jub6x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Arrow" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1.33849e-05, 0)
+script = ExtResource("1_tjd28")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(0.00012207, 0)
+rotation = 1.5729
+sprite_frames = SubResource("SpriteFrames_jub6x")
