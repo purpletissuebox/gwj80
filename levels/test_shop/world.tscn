@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcrauvedkgise"]
+
+[ext_resource type="PackedScene" uid="uid://b6jumyn21c2yk" path="res://actors/player/player.tscn" id="1_6dm81"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3x5h8"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yh8wm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6dm81"]
+
+[sub_resource type="Sky" id="Sky_3x5h8"]
+sky_material = SubResource("ProceduralSkyMaterial_6dm81")
+
+[sub_resource type="Environment" id="Environment_yh8wm"]
+background_mode = 2
+sky = SubResource("Sky_3x5h8")
+
+[node name="World" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(11.94, 0, 0, 0, 11.94, 0, 0, 0, 11.94, 0, 0, 0)
+mesh = SubResource("PlaneMesh_3x5h8")
+
+[node name="Player" parent="." instance=ExtResource("1_6dm81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17558, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_yh8wm")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yh8wm")
