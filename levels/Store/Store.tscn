@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxuddo8awlyri"]
+
+[ext_resource type="PackedScene" uid="uid://dwh82pc5cbfi5" path="res://levels/Store/Tileset1.tscn" id="1_bwiar"]
+[ext_resource type="PackedScene" uid="uid://bckqmsc3muilp" path="res://levels/Store/Tileset2.tscn" id="2_7nddf"]
+
+[node name="Store" type="Node3D"]
+
+[node name="Tileset1" parent="." instance=ExtResource("1_bwiar")]
+
+[node name="Tileset2" parent="." instance=ExtResource("2_7nddf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18)

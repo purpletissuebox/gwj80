@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwh82pc5cbfi5"]
+
+[ext_resource type="PackedScene" uid="uid://co06hqnr3eus6" path="res://levels/Store/WhiteTile.tscn" id="1_o03e5"]
+[ext_resource type="PackedScene" uid="uid://b88ds8tebxit7" path="res://levels/Store/BlackTile.tscn" id="2_v1ubt"]
+
+[node name="Tileset1" type="Node3D"]
+
+[node name="WhiteTile" parent="." instance=ExtResource("1_o03e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="WhiteTile2" parent="." instance=ExtResource("1_o03e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="WhiteTile3" parent="." instance=ExtResource("1_o03e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="WhiteTile4" parent="." instance=ExtResource("1_o03e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="BlackTile" parent="." instance=ExtResource("2_v1ubt")]
+
+[node name="BlackTile2" parent="." instance=ExtResource("2_v1ubt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="BlackTile3" parent="." instance=ExtResource("2_v1ubt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6)
+
+[node name="BlackTile4" parent="." instance=ExtResource("2_v1ubt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 6)
+
+[node name="BlackTile5" parent="." instance=ExtResource("2_v1ubt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6)
