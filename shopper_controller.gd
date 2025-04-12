@@ -9,40 +9,42 @@ class_name ShopperController extends Node
 # TODO.hw - add a Manager control scheme that wanders the store and if seeing the player hunts
 # them down to kick them out.
 
-# TODO.hw setup states - meander, linger, traverse
-# meander - randome wander around the radius of the current position
-# linger - remain still
-# traverse - head directly to next point
 @onready var navigation_agent_3d: NavigationAgent3D = $"../NavigationAgent3D"
 @export var body: CharacterBody3D
-var v_o = 1
+@export var state: States
+var speed = 1
 var a = 1
 var dir: Vector3
-var state
-enum {MEANDER, LINGER, TRAVERSE}
+
+enum States { MEANDER, LINGER, TRAVERSE}
+
+func _ready() -> void:
+	state = States.LINGER
+
 func _physics_process(delta: float) -> void:
-	navigation_agent_3d.target_position = _find_destination()
-	dir = (navigation_agent_3d.get_next_path_position() - body.global_position).normalized()
-	body.velocity = body.velocity.lerp(dir*v_o, 1)
+	
+	match state:
+		States.TRAVERSE:
+			dir = (navigation_agent_3d.get_next_path_position() - body.global_position).normalized()
+			body.velocity = body.velocity.lerp(dir*speed, 1)
+			
+			if navigation_agent_3d.is_navigation_finished():
+				state = States.LINGER
+		States.MEANDER:
+			_meander()
+		States.LINGER:
+			_linger()
+
 
 func _find_destination() -> Vector3:
-	var closest_location = Vector3(10000,10000,10000)
 	var potential_destinations = get_tree().get_nodes_in_group("destinations")
-	for destination in potential_destinations:
-		if _3d_distance_to_2d(body.position, destination.position) < _3d_distance_to_2d(body.position, closest_location):
-			closest_location = destination.position
-			
-	return closest_location
-	
-# TODO.hw - upon collision emit death
-func _3d_distance_to_2d(pos1,pos2):
-	return Vector2(pos1.x,pos1.z).distance_to(Vector2(pos2.x,pos2.z))
+	var index = randi_range(0, potential_destinations.size()-1)
+	return potential_destinations[index].position
 
-func _find_next_point():
-	match state:
-		MEANDER:
-			pass
-		LINGER:
-			pass
-		TRAVERSE:
-			pass
+func _meander():
+	# TODO.hw - wander around in a radius around the shopper
+	pass
+	
+func _linger():
+	state = States.TRAVERSE
+	navigation_agent_3d.target_position = _find_destination()
