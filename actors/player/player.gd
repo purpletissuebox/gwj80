@@ -1,14 +1,26 @@
-extends VehicleBody3D
+class_name ShoppingCart extends RigidBody3D
 
-@onready var vehicle_wheel_3d: VehicleWheel3D = $VehicleWheel3D
+@export var steer_force:Curve
+@export var engine_force:Curve
+const TOP_SPEED:float = 300
+const STEER_RATE:float = PI/4
+const CAR_MASS:float = 100
+const FRONT_TIRES:int = 0
+const BACK_TIRES:int = 2
+const NUM_TIRES:int = 4
 
-func _ready():
-	for i in range(1,4):
-		var new_wheel:VehicleWheel3D = vehicle_wheel_3d.duplicate()
-		new_wheel.position.x *= (-1 if i & 1 else 1)
-		new_wheel.position.z *= (-1 if i & 2 else 1)
-		self.add_child(new_wheel)
+var wheel_angle:float = 0
+var wheels:Array[Vector3]
 
-func _physics_process(delta):
-	self.engine_force = int(Input.is_action_pressed("gas_pedal"))*100
-	self.steering = Input.get_axis("turn_left", "turn_right")
+#func _ready():
+	#var marker_3d: Marker3D = $Marker3D
+	#for i in NUM_TIRES:
+		#var v:Vector3 = marker_3d.position
+		#v.z *= (1 if i&1 else -1)
+		#v.x *= (1 if i&2 else -1)
+		#self.wheels.append(v)
+	#marker_3d.queue_free()
+
+func get_wheel_speed(w:Wheel):
+	return self.linear_velocity + self.angular_velocity.cross(w.position)
+	
