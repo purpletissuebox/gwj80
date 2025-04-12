@@ -1,3 +1,25 @@
-[gd_scene format=3 uid="uid://chrt6wbn136bo"]
+[gd_scene load_steps=7 format=3 uid="uid://chrt6wbn136bo"]
+
+[ext_resource type="Script" uid="uid://ftgqyejekckk" path="res://food.gd" id="1_lm7oo"]
+[ext_resource type="Texture2D" uid="uid://xmluqvl3kbmg" path="res://beans.jpg" id="2_myikp"]
+[ext_resource type="Script" uid="uid://dx5ifbc37t16s" path="res://rotate.gd" id="3_oo3mi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oo3mi"]
+albedo_texture = ExtResource("2_myikp")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vfgn2"]
+
+[sub_resource type="Skin" id="Skin_6gw6q"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_lm7oo")
+
+[node name="Placeholder Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.728059, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_oo3mi")
+mesh = SubResource("CylinderMesh_vfgn2")
+skin = SubResource("Skin_6gw6q")
+script = ExtResource("3_oo3mi")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.961367, 0.275268, 0, -0.275268, 0.961367, 0, 0.992065, 2.45366)
