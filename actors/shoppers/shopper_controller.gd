@@ -12,24 +12,27 @@ class_name ShopperController extends Node
 @onready var navigation_agent_3d: NavigationAgent3D = $"../NavigationAgent3D"
 @export var body: CharacterBody3D
 @export var state: States
-var speed = 1
+var speed = 10
 var a = 1
 var dir: Vector3
 
 enum States { MEANDER, LINGER, TRAVERSE}
 
 func _ready() -> void:
-	state = States.LINGER
+	state = States.TRAVERSE
 
 func _physics_process(delta: float) -> void:
-	
+	var next_position = navigation_agent_3d.get_next_path_position()
 	match state:
 		States.TRAVERSE:
-			dir = (navigation_agent_3d.get_next_path_position() - body.global_position).normalized()
+			dir = (next_position - body.global_position).normalized()
 			body.velocity = body.velocity.lerp(dir*speed, 1)
 			
 			if navigation_agent_3d.is_navigation_finished():
-				state = States.LINGER
+				# HACK.hw - set velocity to zero or else the shopper continues 
+				#           flying off the navigation mesh  
+				body.velocity = Vector3.ZERO
+				_next_state()
 		States.MEANDER:
 			_meander()
 		States.LINGER:
@@ -43,8 +46,22 @@ func _find_destination() -> Vector3:
 
 func _meander():
 	# TODO.hw - wander around in a radius around the shopper
-	pass
+	get_moving()
 	
 func _linger():
+	if %FaffAroundTimer.is_stopped():
+		%FaffAroundTimer.start()
+
+func _next_state() -> void:
+	var roll = randi_range(0, 9)
+	
+	if roll < 2:
+		state = States.LINGER
+	elif roll < 7:
+		state = States.TRAVERSE
+	else:
+		state = States.MEANDER 
+
+func get_moving() -> void:
 	state = States.TRAVERSE
 	navigation_agent_3d.target_position = _find_destination()

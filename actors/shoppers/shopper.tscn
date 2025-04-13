@@ -22,3 +22,9 @@ debug_enabled = true
 [node name="NavigationController" type="Node" parent="." node_paths=PackedStringArray("body")]
 script = ExtResource("3_8mqvt")
 body = NodePath("..")
+
+[node name="FaffAroundTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="FaffAroundTimer" to="NavigationController" method="get_moving"]

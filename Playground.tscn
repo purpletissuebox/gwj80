@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://qghlxw4m0nj6"]
+[gd_scene load_steps=5 format=3 uid="uid://qghlxw4m0nj6"]
 
 [ext_resource type="PackedScene" uid="uid://c67sv6y1yi3jq" path="res://actors/shoppers/shopper.tscn" id="1_80c3a"]
+[ext_resource type="PackedScene" uid="uid://cds33sn6i33ej" path="res://models/BEANS.glb" id="2_d17em"]
 
 [sub_resource type="Environment" id="Environment_3invt"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_1cwr0"]
-vertices = PackedVector3Array(1.25, 0.5, 0, 1.5, 0.5, 0.5, 4.5, 0.5, 0.5, 4.5, 0.5, -4.5, -4.5, 0.5, -4.5, -4.5, 0.5, 0, 1.25, 0.5, 2.25, 4.5, 0.5, 4.5, -4.5, 0.5, 2.25, -4.5, 0.5, 4.5)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 0), PackedInt32Array(0, 4, 3), PackedInt32Array(1, 2, 6), PackedInt32Array(6, 2, 7), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 7)]
+vertices = PackedVector3Array(-5.55963, 0.5, 0.396172, -5.05963, 0.5, 0.146172, -5.05963, 0.5, -10.8538, -17.3096, 0.5, -10.8538, -17.3096, 0.5, 1.14617, -5.55963, 0.5, 1.14617, 1.44037, 0.5, 0.146172, 1.69037, 0.5, 1.39617, 2.44037, 0.5, 1.39617, 3.19037, 0.5, 0.146172, 4.94037, 0.5, -10.8538, 4.94037, 0.5, 0.146172, 5.94037, 0.5, 0.896172, 5.94037, 0.5, 1.64617, 17.1904, 0.5, 1.64617, 17.1904, 0.5, -10.8538, -3.30963, 0.5, 10.8962, -3.30963, 0.5, 2.39617, -5.30963, 0.5, 2.39617, -17.3096, 0.5, 10.8962, 3.44037, 2.5, 1.14617, 3.44037, 2.5, 2.14617, 4.94037, 2.5, 2.14617, 4.94037, 2.5, 1.14617, 1.44037, 0.5, 2.39617, 2.44037, 0.5, 2.64617, 4.19037, 0.5, 3.39617, 4.19037, 0.5, 10.8962, 3.69037, 0.5, 1.64617, 4.69037, 0.5, 1.89617, 4.44037, 0.5, 1.39617, 5.44037, 0.5, 3.14617, 17.1904, 0.5, 10.8962)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(0, 5, 4), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 10), PackedInt32Array(1, 2, 6), PackedInt32Array(6, 2, 10), PackedInt32Array(10, 11, 9), PackedInt32Array(14, 13, 12), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 15), PackedInt32Array(12, 15, 14), PackedInt32Array(18, 17, 16), PackedInt32Array(4, 5, 18), PackedInt32Array(4, 18, 19), PackedInt32Array(19, 18, 16), PackedInt32Array(23, 22, 20), PackedInt32Array(20, 22, 21), PackedInt32Array(7, 8, 24), PackedInt32Array(24, 8, 25), PackedInt32Array(25, 26, 24), PackedInt32Array(24, 26, 17), PackedInt32Array(17, 26, 27), PackedInt32Array(17, 27, 16), PackedInt32Array(28, 30, 29), PackedInt32Array(27, 26, 31), PackedInt32Array(31, 13, 27), PackedInt32Array(27, 13, 14), PackedInt32Array(27, 14, 32)]
 
 [node name="Playground" type="Node"]
 
@@ -14,7 +15,7 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 environment = SubResource("Environment_3invt")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.442007, 0.897012, 0, -0.897012, -0.442007, 0, 3.7475, 0)
+transform = Transform3D(1, 0, 0, 0, 0.62799, 0.778221, 0, -0.778221, 0.62799, 0, 6.60554, 1.04729)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_80c3a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01356, 0)
@@ -23,7 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01356, 0)
 navigation_mesh = SubResource("NavigationMesh_1cwr0")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(3.56193, 0, 0, 0, 1, 0, 0, 0, 2.27077, 0, -0.5, 0)
 use_collision = true
 size = Vector3(10, 1, 10)
 
@@ -31,8 +32,11 @@ size = Vector3(10, 1, 10)
 transform = Transform3D(5.9, 0, 0, 0, 3, 0, 0, 0, 1, -2, 0, 1.1662)
 use_collision = true
 
+[node name="BEANS" parent="NavigationRegion3D" instance=ExtResource("2_d17em")]
+transform = Transform3D(1.173, 0, 0, 0, 0.762892, 0, 0, 0, 1, 4.18711, 9.53674e-07, 1.67755)
+
 [node name="Marker3D" type="Marker3D" parent="." groups=["destinations"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43858, 0.391063, 3.06232)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43858, 0.391063, 5.27595)
 
 [node name="Marker3D2" type="Marker3D" parent="." groups=["destinations"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.52209, 0.391063, 0.373602)
@@ -40,5 +44,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.52209, 0.391063, 0.373602)
 [node name="Marker3D3" type="Marker3D" parent="." groups=["destinations"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43858, 0.391063, -3.13521)
 
+[node name="Marker3D4" type="Marker3D" parent="." groups=["destinations"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1937, 0.391063, -3.13521)
+
+[node name="Marker3D5" type="Marker3D" parent="." groups=["destinations"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89015, 0.391063, 4.28249)
+
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.28643, 9.86914)
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 6.87144, 14.1175)
