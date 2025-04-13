@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ckq3uhh2kdqf0" path="res://levels/Store/Walls.tscn" id="3_7nddf"]
 [ext_resource type="PackedScene" uid="uid://xttrjiexxn3q" path="res://models/2doorsdown.glb" id="4_ivk8j"]
 [ext_resource type="PackedScene" uid="uid://x4ldxqf7fvie" path="res://models/counter.glb" id="5_bb5ro"]
-[ext_resource type="PackedScene" path="res://levels/Store/Aisle/Aisle1.tscn" id="6_lyk3v"]
+[ext_resource type="PackedScene" uid="uid://b3eixshvww2g5" path="res://levels/Store/Aisle/Aisle1.tscn" id="6_lyk3v"]
 [ext_resource type="PackedScene" uid="uid://dytehtuv78onm" path="res://levels/Store/Aisle/Aisle2.tscn" id="7_xm203"]
 [ext_resource type="PackedScene" uid="uid://1ikky8r3see" path="res://levels/Store/Aisle/Aisle3.tscn" id="8_rplgv"]
 [ext_resource type="PackedScene" uid="uid://r37y7klt8hus" path="res://levels/Store/Aisle/Aisle4.tscn" id="9_c3jnp"]
@@ -55,4 +55,4 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108, 3
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108, 3, 306)
 
 [node name="Ailse8" parent="." instance=ExtResource("13_lothm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108, 0, 360)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108, 3, 360)
