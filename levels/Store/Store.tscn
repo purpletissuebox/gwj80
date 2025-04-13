@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://6vn6k5tk72ed"]
+[gd_scene load_steps=7 format=3 uid="uid://6vn6k5tk72ed"]
 
 [ext_resource type="PackedScene" uid="uid://cxuddo8awlyri" path="res://levels/Store/Floor.tscn" id="1_55sxh"]
 [ext_resource type="PackedScene" uid="uid://d2d7kcx7u08vp" path="res://models/theGreatWallOfBEAN.glb" id="2_bwiar"]
 [ext_resource type="PackedScene" uid="uid://ckq3uhh2kdqf0" path="res://levels/Store/Walls.tscn" id="3_7nddf"]
 [ext_resource type="PackedScene" uid="uid://xttrjiexxn3q" path="res://models/2doorsdown.glb" id="4_ivk8j"]
 [ext_resource type="PackedScene" uid="uid://x4ldxqf7fvie" path="res://models/counter.glb" id="5_bb5ro"]
+[ext_resource type="PackedScene" path="res://levels/Store/Aisle/Aisle1.tscn" id="6_lyk3v"]
 
 [node name="Store" type="Node3D"]
 
@@ -24,3 +25,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18, 0,
 
 [node name="counter2" parent="." instance=ExtResource("5_bb5ro")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18, 0, 54)
+
+[node name="Ailse1" parent="." instance=ExtResource("6_lyk3v")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 144, 0, -18)
