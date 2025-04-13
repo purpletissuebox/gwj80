@@ -18,6 +18,7 @@ boot_splash/show_image=false
 [autoload]
 
 SignalBus="*res://drivers/signal_bus.gd"
+AudioDriver="*res://drivers/audio.gd"
 
 [input]
 
