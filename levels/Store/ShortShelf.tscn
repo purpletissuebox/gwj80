@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckxkdt0p6mkja"]
+
+[ext_resource type="PackedScene" uid="uid://deijs0ghxijuu" path="res://models/theSmallWallOfBEAN.glb" id="1_puvkc"]
+
+[node name="ShortShelf" type="Node3D"]
+
+[node name="theSmallWallOfBEAN" parent="." instance=ExtResource("1_puvkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
+
+[node name="theSmallWallOfBEAN2" parent="." instance=ExtResource("1_puvkc")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3, 0, -1.3)
