@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dcrauvedkgise"]
 
 [ext_resource type="Texture2D" uid="uid://duvug5r3bs20v" path="res://levels/test_shop/checkerboard.tres" id="1_3x5h8"]
-[ext_resource type="PackedScene" uid="uid://dq4c3i7drdv6x" path="res://actors/player/player.tscn" id="1_6dm81"]
+[ext_resource type="PackedScene" uid="uid://cggo3lq863lo" path="res://actors/player/new/player.tscn" id="2_3x5h8"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6dm81"]
 
@@ -80,14 +80,7 @@ skeleton = NodePath("../..")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_yh8wm")
 
-[node name="Player" parent="." instance=ExtResource("1_6dm81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-gravity_scale = 3.5
-spring_strength = 2500.0
-damping = 100.0
-engine_strength = 250.0
-grip_front = 0.5
-grip_rear = 2.5
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.691626, 0.722255, 0, -0.722255, -0.691626, 20.6819, 23.4758, 13.633)
+
+[node name="Player" parent="." instance=ExtResource("2_3x5h8")]
