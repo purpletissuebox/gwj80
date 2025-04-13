@@ -1,58 +1,42 @@
-[gd_scene load_steps=7 format=3 uid="uid://dq4c3i7drdv6x"]
+[gd_scene load_steps=5 format=3 uid="uid://dq4c3i7drdv6x"]
 
 [ext_resource type="Script" uid="uid://dsq5g5rucaagm" path="res://actors/player/player.gd" id="1_nvxhs"]
+[ext_resource type="PackedScene" uid="uid://bn5f7r3wwrvxc" path="res://models/CartOfTruth.glb" id="2_ax26v"]
 [ext_resource type="PackedScene" uid="uid://bg4xosb0ufpgi" path="res://actors/player/wheels/wheel.tscn" id="2_ilk7j"]
 
-[sub_resource type="Curve" id="Curve_ilk7j"]
-_data = [Vector2(0.1, 0.5), 0.0, 0.0, 0, 0, Vector2(0.3, 1), 0.0, 0.0, 0, 0, Vector2(0.8, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
-metadata/_snap_enabled = true
-
-[sub_resource type="Curve" id="Curve_ax26v"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.7, 0.2), 0.0, 0.0, 0, 0]
-point_count = 2
-metadata/_snap_enabled = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_nvxhs"]
-size = Vector3(3, 0.5, 1.5)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_nvxhs"]
-size = Vector3(3, 0.5, 1.5)
+size = Vector3(1.98092, 3.4933, 4.379)
 
-[node name="Player" type="RigidBody3D"]
-angular_damp_mode = 1
+[node name="Player" type="RigidBody3D" node_paths=PackedStringArray("front_wheels")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mass = 10.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -1, 0)
 script = ExtResource("1_nvxhs")
-engine_curve = SubResource("Curve_ilk7j")
-grip_curve = SubResource("Curve_ax26v")
-steer_strength = 0.03
+front_wheels = [NodePath("Wheel"), NodePath("Wheel2")]
 
-[node name="Model" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_nvxhs")
+[node name="Model" parent="." instance=ExtResource("2_ax26v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06975, 1.24886)
 
 [node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.753, 0)
 shape = SubResource("BoxShape3D_nvxhs")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0.173648, -0.984808, 0, 0.984808, 0.173648, 1, 7.5904e-09, -4.30473e-08, -5, 2, 0)
-
-[node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.990804, 0, 0.855257)
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 6, 5)
 
 [node name="Wheel" parent="." node_paths=PackedStringArray("car") instance=ExtResource("2_ilk7j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0.57)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.83, 0, -1.6)
 car = NodePath("..")
-him = true
 
 [node name="Wheel2" parent="." node_paths=PackedStringArray("car") instance=ExtResource("2_ilk7j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, -0.57)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83, 0, -1.6)
 car = NodePath("..")
 
 [node name="Wheel3" parent="." node_paths=PackedStringArray("car") instance=ExtResource("2_ilk7j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, 0.57)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0, 1.8)
 car = NodePath("..")
-back_tire = true
 
 [node name="Wheel4" parent="." node_paths=PackedStringArray("car") instance=ExtResource("2_ilk7j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, -0.57)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 1.8)
 car = NodePath("..")
-back_tire = true
