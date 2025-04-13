@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl01e7a3sl4dq"]
+
+[ext_resource type="Script" uid="uid://dvg0hb77cw0w4" path="res://actors/player/new/wheel.gd" id="1_hn85l"]
+
+[node name="Wheel" type="RayCast3D"]
+script = ExtResource("1_hn85l")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.485364, 0)
