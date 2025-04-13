@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://6vn6k5tk72ed"]
+[gd_scene load_steps=14 format=3 uid="uid://6vn6k5tk72ed"]
 
 [ext_resource type="PackedScene" uid="uid://cxuddo8awlyri" path="res://levels/Store/Floor.tscn" id="1_55sxh"]
 [ext_resource type="PackedScene" uid="uid://d2d7kcx7u08vp" path="res://models/theGreatWallOfBEAN.glb" id="2_bwiar"]
@@ -6,6 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://xttrjiexxn3q" path="res://models/2doorsdown.glb" id="4_ivk8j"]
 [ext_resource type="PackedScene" uid="uid://x4ldxqf7fvie" path="res://models/counter.glb" id="5_bb5ro"]
 [ext_resource type="PackedScene" path="res://levels/Store/Aisle/Aisle1.tscn" id="6_lyk3v"]
+[ext_resource type="PackedScene" uid="uid://dytehtuv78onm" path="res://levels/Store/Aisle/Aisle2.tscn" id="7_xm203"]
+[ext_resource type="PackedScene" uid="uid://1ikky8r3see" path="res://levels/Store/Aisle/Aisle3.tscn" id="8_rplgv"]
+[ext_resource type="PackedScene" uid="uid://r37y7klt8hus" path="res://levels/Store/Aisle/Aisle4.tscn" id="9_c3jnp"]
+[ext_resource type="PackedScene" uid="uid://chdrfqyvqnc86" path="res://levels/Store/Aisle/Aisle5.tscn" id="9_ulgfr"]
+[ext_resource type="PackedScene" uid="uid://cqwknfxlwwegs" path="res://levels/Store/Aisle/Aisle6.tscn" id="11_cfupx"]
+[ext_resource type="PackedScene" uid="uid://dhpxwae5gyehb" path="res://levels/Store/Aisle/Aisle7.tscn" id="12_cfupx"]
+[ext_resource type="PackedScene" uid="uid://rlhv8hud78ae" path="res://levels/Store/Aisle/Aisle8.tscn" id="13_lothm"]
 
 [node name="Store" type="Node3D"]
 
@@ -27,4 +34,25 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18, 0,
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18, 0, 54)
 
 [node name="Ailse1" parent="." instance=ExtResource("6_lyk3v")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 144, 0, -18)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 144, 3, -18)
+
+[node name="Aisle2" parent="." instance=ExtResource("7_xm203")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108, 3, 36)
+
+[node name="Aisle3" parent="." instance=ExtResource("8_rplgv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108, 3, 90)
+
+[node name="Ailse4" parent="." instance=ExtResource("9_c3jnp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108, 3, 144)
+
+[node name="Ailse5" parent="." instance=ExtResource("9_ulgfr")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108, 3, 198)
+
+[node name="Ailse6" parent="." instance=ExtResource("11_cfupx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108, 3, 252)
+
+[node name="Ailse7" parent="." instance=ExtResource("12_cfupx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108, 3, 306)
+
+[node name="Ailse8" parent="." instance=ExtResource("13_lothm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108, 0, 360)
