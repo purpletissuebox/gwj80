@@ -11,8 +11,5 @@
 [node name="theGreatWallOfBEAN" parent="." instance=ExtResource("2_bwiar")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.5, 3.5, -5)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.365347, 0.0260885, -0.930506, 0.226745, 0.967005, 0.116139, 0.902834, -0.253419, 0.347376, -20.8703, 10.6854, -7.6154)
-
 [node name="Walls" parent="." instance=ExtResource("3_7nddf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
