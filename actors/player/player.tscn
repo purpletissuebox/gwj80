@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dq4c3i7drdv6x"]
+[gd_scene load_steps=6 format=3 uid="uid://dq4c3i7drdv6x"]
 
 [ext_resource type="Script" uid="uid://dsq5g5rucaagm" path="res://actors/player/player.gd" id="1_nvxhs"]
-[ext_resource type="PackedScene" uid="uid://bn5f7r3wwrvxc" path="res://models/CartOfTruth.glb" id="2_ax26v"]
+[ext_resource type="PackedScene" uid="uid://dmt58vcblpw1r" path="res://models/CartOfTruth.glb" id="2_ax26v"]
 [ext_resource type="PackedScene" uid="uid://bg4xosb0ufpgi" path="res://actors/player/wheels/wheel.tscn" id="2_ilk7j"]
+[ext_resource type="Script" uid="uid://dqjfa7vtkod5b" path="res://CartBody.gd" id="4_lsqbn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nvxhs"]
 size = Vector3(1.98092, 3.4933, 4.379)
 
 [node name="Player" type="RigidBody3D" node_paths=PackedStringArray("front_wheels")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mass = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -1, 0)
@@ -40,3 +40,14 @@ car = NodePath("..")
 [node name="Wheel4" parent="." node_paths=PackedStringArray("car") instance=ExtResource("2_ilk7j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 1.8)
 car = NodePath("..")
+
+[node name="CartBodyHitbox" type="Area3D" parent="."]
+disable_mode = 2
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_lsqbn")
+metadata/_custom_type_script = "uid://dqjfa7vtkod5b"
+
+[node name="Collider" type="CollisionShape3D" parent="CartBodyHitbox"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 1.753, 0)
+shape = SubResource("BoxShape3D_nvxhs")
