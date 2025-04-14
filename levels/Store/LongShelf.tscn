@@ -1,11 +1,56 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5xwqbtwkdnyi"]
+[gd_scene load_steps=4 format=3 uid="uid://b5xwqbtwkdnyi"]
 
 [ext_resource type="PackedScene" uid="uid://d2d7kcx7u08vp" path="res://models/theGreatWallOfBEAN.glb" id="1_bbmgu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bbmgu"]
+size = Vector3(1, 20.5647, 1.5069)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bbmgu"]
 
 [node name="LongShelf" type="Node3D"]
 
 [node name="theGreatWallOfBEAN" parent="." instance=ExtResource("1_bbmgu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="theGreatWallOfBEAN"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="theGreatWallOfBEAN/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 18, 3, 6.9153, 14.2995)
+shape = SubResource("BoxShape3D_bbmgu")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="theGreatWallOfBEAN"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="theGreatWallOfBEAN/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 18, -3.43774, 6.9153, 14.2995)
+shape = SubResource("BoxShape3D_bbmgu")
+
 [node name="theGreatWallOfBEAN2" parent="." instance=ExtResource("1_bbmgu")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3, 0, -0.69)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="theGreatWallOfBEAN2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="theGreatWallOfBEAN2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 18, 0, 6.9153, 13.854)
+shape = SubResource("BoxShape3D_bbmgu")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="theGreatWallOfBEAN2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="theGreatWallOfBEAN2/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 18, -6.2935, 6.89845, 13.1168)
+shape = SubResource("BoxShape3D_bbmgu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.514548, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27.4332)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(11.1358, 0, 0, 0, 13.1913, 0, 0, 0, 1, 0, 6.77795, 0)
+shape = SubResource("CapsuleShape3D_bbmgu")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.514548, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(11.1358, 0, 0, 0, 13.1913, 0, 0, 0, 1, 0, 6.77795, 27.3615)
+shape = SubResource("CapsuleShape3D_bbmgu")

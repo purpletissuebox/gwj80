@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://6vn6k5tk72ed"]
+[gd_scene load_steps=16 format=3 uid="uid://6vn6k5tk72ed"]
 
 [ext_resource type="PackedScene" uid="uid://cxuddo8awlyri" path="res://levels/Store/Floor.tscn" id="1_55sxh"]
 [ext_resource type="PackedScene" uid="uid://d2d7kcx7u08vp" path="res://models/theGreatWallOfBEAN.glb" id="2_bwiar"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cqwknfxlwwegs" path="res://levels/Store/Aisle/Aisle6.tscn" id="11_cfupx"]
 [ext_resource type="PackedScene" uid="uid://dhpxwae5gyehb" path="res://levels/Store/Aisle/Aisle7.tscn" id="12_cfupx"]
 [ext_resource type="PackedScene" uid="uid://rlhv8hud78ae" path="res://levels/Store/Aisle/Aisle8.tscn" id="13_lothm"]
+[ext_resource type="PackedScene" uid="uid://dq4c3i7drdv6x" path="res://actors/player/player.tscn" id="14_npkuy"]
 [ext_resource type="PackedScene" uid="uid://yg3y8bgn8phm" path="res://levels/Store/Ceiling.tscn" id="15_vkcuq"]
 
 [node name="Store" type="Node3D"]
@@ -60,3 +61,5 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108, 3
 
 [node name="Ceiling" parent="." instance=ExtResource("15_vkcuq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36, 0)
+
+[node name="Player" parent="." instance=ExtResource("14_npkuy")]
