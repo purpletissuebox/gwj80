@@ -27,4 +27,10 @@ body = NodePath("..")
 unique_name_in_owner = true
 one_shot = true
 
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_80c3a")
+
 [connection signal="timeout" from="FaffAroundTimer" to="NavigationController" method="get_moving"]
+[connection signal="area_entered" from="Area3D" to="." method="_on_collision"]
