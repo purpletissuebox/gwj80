@@ -15,13 +15,16 @@ class_name ShopperController extends Node
 @export var speed = 10
 @export var acceleration = 1
 var dir: Vector3
-
-enum States { MEANDER, LINGER, TRAVERSE}
+var death_rotation = deg_to_rad(15)
+enum States {INIT, MEANDER, LINGER, TRAVERSE, PAUSED}
 
 func _ready() -> void:
 	state = States.TRAVERSE
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
+	if state == States.PAUSED:
+		body.rotation_degrees.y += 10
+		return
 	var next_position = navigation_agent_3d.get_next_path_position()
 	match state:
 		States.TRAVERSE:
@@ -63,6 +66,13 @@ func _next_state() -> void:
 	else:
 		state = States.MEANDER 
 
-func get_moving() -> void:
+func get_moving() -> void:	
 	state = States.TRAVERSE
 	navigation_agent_3d.target_position = _find_destination()
+
+func _so_long() -> void:
+	print("Its been good to know ya")
+	body.call_deferred("free")
+	
+func _on_released_from_mortal_coil() -> void:
+	%DeathTimer.start(2)
