@@ -3,7 +3,7 @@ class_name Shopper extends CharacterBody3D
 @onready var sprite_3d: Sprite3D = $Sprite3D
 @onready var navigation_controller: ShopperController = $NavigationController
 
-@export var monetaryValueOfLife : int
+@export var monetaryValueOfLife : int = 0
 @export var representationOfTheSoul : CompressedTexture2D
 
 signal releasedFromMortalCoil
@@ -29,4 +29,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		#collision_force.y = 0
 		sprite_3d.billboard = BaseMaterial3D.BILLBOARD_DISABLED
 		releasedFromMortalCoil.emit()
+		SignalBus.change_money.emit(monetaryValueOfLife)
 		velocity += collision_velocity*collision_force
