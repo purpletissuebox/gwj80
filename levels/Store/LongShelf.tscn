@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5xwqbtwkdnyi"]
 
-[ext_resource type="PackedScene" uid="uid://d2d7kcx7u08vp" path="res://models/theGreatWallOfBEAN.glb" id="1_bbmgu"]
+[ext_resource type="PackedScene" uid="uid://bc11daejjsi35" path="res://models/theGreatWallOfBEAN.glb" id="1_bbmgu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bbmgu"]
 size = Vector3(1, 20.5647, 1.5069)

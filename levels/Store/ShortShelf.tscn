@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ckxkdt0p6mkja"]
 
-[ext_resource type="PackedScene" uid="uid://deijs0ghxijuu" path="res://models/theSmallWallOfBEAN.glb" id="1_puvkc"]
-[ext_resource type="Script" uid="uid://bcru86k4sqsg8" path="res://levels/Store/ShelfPickup.gd" id="2_l87n6"]
+[ext_resource type="PackedScene" uid="uid://dm3dfy7dc6b1d" path="res://models/theSmallWallOfBEAN.glb" id="1_puvkc"]
+[ext_resource type="Script" uid="uid://dycl32gc8cfvs" path="res://levels/Store/ShelfPickup.gd" id="2_l87n6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_puvkc"]
 size = Vector3(1, 20.5647, 1.5069)
@@ -25,7 +25,6 @@ disable_mode = 2
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("2_l87n6")
-metadata/_custom_type_script = "uid://bcru86k4sqsg8"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="theSmallWallOfBEAN/StaticBody3D/ShelfPickup"]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 19.8, 3.68164, 9.89436, -0.73111)
@@ -45,7 +44,6 @@ disable_mode = 2
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("2_l87n6")
-metadata/_custom_type_script = "uid://bcru86k4sqsg8"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="theSmallWallOfBEAN2/StaticBody3D/ShelfPickup"]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 19.8, 0.41629, 9.89436, -0.73111)
@@ -63,3 +61,6 @@ shape = SubResource("CapsuleShape3D_l87n6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
 transform = Transform3D(6.342, 0, 0, 0, 13.1913, 0, 0, 0, 1, 0, 10.4274, 13.1794)
 shape = SubResource("CapsuleShape3D_l87n6")
+
+[connection signal="area_entered" from="theSmallWallOfBEAN/StaticBody3D/ShelfPickup" to="theSmallWallOfBEAN/StaticBody3D/ShelfPickup" method="_on_shelf_pickup_area_entered"]
+[connection signal="area_entered" from="theSmallWallOfBEAN2/StaticBody3D/ShelfPickup" to="theSmallWallOfBEAN/StaticBody3D/ShelfPickup" method="_on_shelf_pickup_area_entered"]
