@@ -23,6 +23,7 @@ debug_enabled = true
 [node name="NavigationController" type="Node" parent="." node_paths=PackedStringArray("body")]
 script = ExtResource("3_8mqvt")
 body = NodePath("..")
+speed = 30
 
 [node name="FaffAroundTimer" type="Timer" parent="."]
 unique_name_in_owner = true
