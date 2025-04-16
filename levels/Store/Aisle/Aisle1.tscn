@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3eixshvww2g5"]
+
+[ext_resource type="PackedScene" uid="uid://b5xwqbtwkdnyi" path="res://levels/Store/LongShelf.tscn" id="1_8mhkh"]
+[ext_resource type="PackedScene" uid="uid://ckxkdt0p6mkja" path="res://levels/Store/ShortShelf.tscn" id="2_cjoba"]
+
+[node name="Ailse1" type="Node3D"]
+
+[node name="LongShelf" parent="." instance=ExtResource("1_8mhkh")]
+
+[node name="LongShelf2" parent="." instance=ExtResource("1_8mhkh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 90)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.3, 168)
+
+[node name="ShortShelf" parent="Node3D" instance=ExtResource("2_cjoba")]
+
+[node name="ShortShelf2" parent="Node3D" instance=ExtResource("2_cjoba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28)

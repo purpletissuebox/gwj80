@@ -2,12 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dillhmkv24blp"
+uid="uid://dm0u7ya5vcjus"
 path.s3tc="res://.godot/imported/BEANS_bean.png-0af968ec6fad025c2d308d8cc68ef4cb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+
 generator_parameters={
 "md5": "b43092ed86c6d25501251a9d19ee5836"
 }

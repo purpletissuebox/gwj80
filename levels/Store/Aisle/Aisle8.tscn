@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://rlhv8hud78ae"]
+
+[ext_resource type="PackedScene" uid="uid://ckxkdt0p6mkja" path="res://levels/Store/ShortShelf.tscn" id="1_nftyr"]
+
+[node name="Ailse8" type="Node3D"]
+
+[node name="ShortShelf" parent="." instance=ExtResource("1_nftyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, -9)
+
+[node name="ShortShelf2" parent="." instance=ExtResource("1_nftyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 72)
+
+[node name="ShortShelf3" parent="." instance=ExtResource("1_nftyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 157)
+
+[node name="ShortShelf4" parent="." instance=ExtResource("1_nftyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 240)

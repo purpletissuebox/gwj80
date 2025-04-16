@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfc3880ux8kxi"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4tuif"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kk7qk"]
+albedo_color = Color(1, 0, 1, 1)
+
+[node name="CeilingTile" type="Node3D"]
+transform = Transform3D(-3, 2.62268e-07, 0, -2.62268e-07, -3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("PlaneMesh_4tuif")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_kk7qk")

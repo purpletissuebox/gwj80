@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://1ikky8r3see"]
+
+[ext_resource type="PackedScene" uid="uid://b5xwqbtwkdnyi" path="res://levels/Store/LongShelf.tscn" id="1_g0a5l"]
+
+[node name="Aisle3" type="Node3D"]
+
+[node name="LongShelf" parent="." instance=ExtResource("1_g0a5l")]
+
+[node name="LongShelf2" parent="." instance=ExtResource("1_g0a5l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 56)
+
+[node name="LongShelf4" parent="." instance=ExtResource("1_g0a5l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 168)
+
+[node name="LongShelf5" parent="." instance=ExtResource("1_g0a5l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 224)
