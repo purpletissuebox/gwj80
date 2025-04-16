@@ -12,7 +12,7 @@ class_name ShopperController extends Node
 @onready var navigation_agent_3d: NavigationAgent3D = $"../NavigationAgent3D"
 @export var body: CharacterBody3D
 @export var state: States
-@export var speed = 10
+@export var speed = 5
 @export var acceleration = 1
 var dir: Vector3
 var death_rotation = deg_to_rad(15)
