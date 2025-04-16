@@ -3,17 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< HEAD
-uid="uid://bte8qlpm5e7ax"
-=======
-uid="uid://dusf6wwj31km"
->>>>>>> c123e17 (adding apple and imports)
-path="res://.godot/imported/BEANS.glb-0d718ca84ef0bcd300b6a2aa72437086.scn"
+uid="uid://ch1fusgj5hpbi"
+path="res://.godot/imported/floor.glb-5082ff8a88b784c94ed743a360c78a98.scn"
 
 [deps]
 
-source_file="res://models/BEANS.glb"
-dest_files=["res://.godot/imported/BEANS.glb-0d718ca84ef0bcd300b6a2aa72437086.scn"]
+source_file="res://models/floor.glb"
+dest_files=["res://.godot/imported/floor.glb-5082ff8a88b784c94ed743a360c78a98.scn"]
 
 [params]
 
