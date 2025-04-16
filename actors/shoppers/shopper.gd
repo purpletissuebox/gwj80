@@ -2,6 +2,7 @@ class_name Shopper extends CharacterBody3D
 
 @onready var sprite_3d: Sprite3D = $Sprite3D
 @onready var navigation_controller: ShopperController = $NavigationController
+@onready var money_emitter: GPUParticles3D = $MoneyEmitter
 
 @export var monetaryValueOfLife : int = 0
 @export var representationOfTheSoul : CompressedTexture2D
@@ -27,6 +28,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		navigation_controller.state = navigation_controller.States.PAUSED
 		var collision_velocity = body.linear_velocity
 		#collision_force.y = 0
+		money_emitter.emitting = true
 		sprite_3d.billboard = BaseMaterial3D.BILLBOARD_DISABLED
 		releasedFromMortalCoil.emit()
 		SignalBus.change_money.emit(monetaryValueOfLife)
