@@ -3,7 +3,11 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
+<<<<<<< HEAD
 uid="uid://dh1c2rnj2ngum"
+=======
+uid="uid://gnh6gcgoq23r"
+>>>>>>> c123e17 (adding apple and imports)
 path="res://.godot/imported/counter.glb-c466fbc1006f4fb06024045adc729bd9.scn"
 
 [deps]

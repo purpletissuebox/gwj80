@@ -3,7 +3,11 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
+<<<<<<< HEAD
 uid="uid://dm3dfy7dc6b1d"
+=======
+uid="uid://ctuj82k1hpx63"
+>>>>>>> c123e17 (adding apple and imports)
 path="res://.godot/imported/theSmallWallOfBEAN.glb-b598b237e1fa34d22d857a179c8877f4.scn"
 
 [deps]

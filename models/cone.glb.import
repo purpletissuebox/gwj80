@@ -3,7 +3,11 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
+<<<<<<< HEAD
 uid="uid://cnj00hat6eq6h"
+=======
+uid="uid://nurr3182rhko"
+>>>>>>> c123e17 (adding apple and imports)
 path="res://.godot/imported/cone.glb-025a35e425c4bddc2bb03baf866f7953.scn"
 
 [deps]
