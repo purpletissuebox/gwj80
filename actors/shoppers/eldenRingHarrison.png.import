@@ -2,21 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm0u7ya5vcjus"
-path.s3tc="res://.godot/imported/BEANS_bean.png-0af968ec6fad025c2d308d8cc68ef4cb.s3tc.ctex"
+uid="uid://b7fcucht0ib1v"
+path.s3tc="res://.godot/imported/eldenRingHarrison.png-7d4c245df65ec471944ffc5f796fb79f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
-generator_parameters={
-"md5": "b43092ed86c6d25501251a9d19ee5836"
-}
-
 [deps]
 
-source_file="res://models/BEANS_bean.png"
-dest_files=["res://.godot/imported/BEANS_bean.png-0af968ec6fad025c2d308d8cc68ef4cb.s3tc.ctex"]
+source_file="res://actors/shoppers/eldenRingHarrison.png"
+dest_files=["res://.godot/imported/eldenRingHarrison.png-7d4c245df65ec471944ffc5f796fb79f.s3tc.ctex"]
 
 [params]
 
