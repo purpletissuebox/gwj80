@@ -3,11 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< HEAD
-uid="uid://deu2xbermtv1h"
-=======
-uid="uid://cmla8s6edaxtr"
->>>>>>> c123e17 (adding apple and imports)
+uid="uid://bvilmhlo2ho16"
 path="res://.godot/imported/2doorsdown.glb-0e2500536ff1ff60c2562d7eeb59574a.scn"
 
 [deps]
@@ -37,5 +33,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1

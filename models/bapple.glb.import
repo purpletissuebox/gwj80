@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://boygbsvhrg0k7"
-path="res://.godot/imported/BEANS.glb-0d718ca84ef0bcd300b6a2aa72437086.scn"
+uid="uid://cuc036eoyjppo"
+path="res://.godot/imported/bapple.glb-4d7c44ef17ea9b4fee0e6667836f851b.scn"
 
 [deps]
 
-source_file="res://models/BEANS.glb"
-dest_files=["res://.godot/imported/BEANS.glb-0d718ca84ef0bcd300b6a2aa72437086.scn"]
+source_file="res://models/bapple.glb"
+dest_files=["res://.godot/imported/bapple.glb-4d7c44ef17ea9b4fee0e6667836f851b.scn"]
 
 [params]
 
@@ -33,5 +33,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=0
+gltf/naming_version=1
 gltf/embedded_image_handling=1
