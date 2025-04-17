@@ -13,6 +13,7 @@ metadata={
 =======
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 =======
 >>>>>>> c123e17 (adding apple and imports)
 >>>>>>> 967d67e (adding apple and imports)
@@ -22,6 +23,8 @@ generator_parameters={
 =======
 >>>>>>> c1f8472 (bunchostuff)
 
+=======
+>>>>>>> c1f84726da83506f3defaf45d719b6567cb005db
 [deps]
 
 source_file="res://models/BEANS_bean.png"
