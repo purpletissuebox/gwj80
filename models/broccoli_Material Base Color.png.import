@@ -2,30 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://135tpgvhbiyj"
-path.s3tc="res://.godot/imported/BEANS_bean.png-0af968ec6fad025c2d308d8cc68ef4cb.s3tc.ctex"
+uid="uid://bxf581kgitujj"
+path.s3tc="res://.godot/imported/broccoli_Material Base Color.png-04ffd8c0d71ec9519f8ccb1c08c0ecb8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> c123e17 (adding apple and imports)
->>>>>>> 967d67e (adding apple and imports)
 generator_parameters={
-"md5": "b43092ed86c6d25501251a9d19ee5836"
+"md5": "f337f02e4c7177511f5760613b62319b"
 }
-=======
->>>>>>> c1f8472 (bunchostuff)
 
 [deps]
 
-source_file="res://models/BEANS_bean.png"
-dest_files=["res://.godot/imported/BEANS_bean.png-0af968ec6fad025c2d308d8cc68ef4cb.s3tc.ctex"]
+source_file="res://models/broccoli_Material Base Color.png"
+dest_files=["res://.godot/imported/broccoli_Material Base Color.png-04ffd8c0d71ec9519f8ccb1c08c0ecb8.s3tc.ctex"]
 
 [params]
 

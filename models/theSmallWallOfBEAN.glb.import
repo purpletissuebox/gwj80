@@ -3,11 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< HEAD
-uid="uid://dm3dfy7dc6b1d"
-=======
-uid="uid://ctuj82k1hpx63"
->>>>>>> c123e17 (adding apple and imports)
+uid="uid://d35lt7f1yrrdw"
 path="res://.godot/imported/theSmallWallOfBEAN.glb-b598b237e1fa34d22d857a179c8877f4.scn"
 
 [deps]
@@ -37,5 +33,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1

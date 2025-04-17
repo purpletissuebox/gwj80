@@ -3,11 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< HEAD
-uid="uid://dh1c2rnj2ngum"
-=======
-uid="uid://gnh6gcgoq23r"
->>>>>>> c123e17 (adding apple and imports)
+uid="uid://3n5qsvxqoumw"
 path="res://.godot/imported/counter.glb-c466fbc1006f4fb06024045adc729bd9.scn"
 
 [deps]
@@ -37,5 +33,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1
