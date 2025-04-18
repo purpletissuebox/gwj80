@@ -9,24 +9,19 @@ class_name ShopperController extends Node
 # TODO.hw - add a Manager control scheme that wanders the store and if seeing the player hunts
 # them down to kick them out.
 
-@onready var wander_distance = 5*body.scale.x
 @onready var navigation_agent_3d: NavigationAgent3D = $"../NavigationAgent3D"
-
 @export var body: CharacterBody3D
 @export var state: States
-@export var speed = 5
+@export var speed = 10
 @export var acceleration = 1
-
 var dir: Vector3
-var death_rotation = deg_to_rad(15)
-enum States {INIT, MEANDER, LINGER, TRAVERSE, PAUSED}
+
+enum States { MEANDER, LINGER, TRAVERSE}
+
 func _ready() -> void:
 	state = States.TRAVERSE
 
-func _physics_process(_delta: float) -> void:
-	if state == States.PAUSED:
-		body.rotation_degrees.y += 10
-		return
+func _physics_process(delta: float) -> void:
 	var next_position = navigation_agent_3d.get_next_path_position()
 	match state:
 		States.TRAVERSE:
@@ -52,7 +47,7 @@ func _find_destination() -> Vector3:
 func _meander():
 	if %FaffAroundTimer.is_stopped():
 		%FaffAroundTimer.start(randf_range(2.0,6.0))
-	navigation_agent_3d.target_position = body.position + Vector3(randf_range(-wander_distance,wander_distance), 0, randf_range(-wander_distance,wander_distance))
+	navigation_agent_3d.target_position = body.position + Vector3(randf_range(-5.0,5), 0, randf_range(-5.0,5))
 	
 func _linger():
 	if %FaffAroundTimer.is_stopped():
@@ -68,13 +63,6 @@ func _next_state() -> void:
 	else:
 		state = States.MEANDER 
 
-func get_moving() -> void:	
+func get_moving() -> void:
 	state = States.TRAVERSE
 	navigation_agent_3d.target_position = _find_destination()
-
-func _so_long() -> void:
-	print("Its been good to know ya")
-	body.call_deferred("free")
-	
-func _on_released_from_mortal_coil() -> void:
-	%DeathTimer.start(2)
