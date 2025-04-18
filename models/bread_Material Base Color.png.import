@@ -2,33 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://135tpgvhbiyj"
-path.s3tc="res://.godot/imported/BEANS_bean.png-0af968ec6fad025c2d308d8cc68ef4cb.s3tc.ctex"
+uid="uid://dhoy3y10cv36i"
+path.s3tc="res://.godot/imported/bread_Material Base Color.png-e735e174e0eee06151b0832d66367ccf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-=======
->>>>>>> c123e17 (adding apple and imports)
->>>>>>> 967d67e (adding apple and imports)
 generator_parameters={
-"md5": "b43092ed86c6d25501251a9d19ee5836"
+"md5": "07e5d40a53e7322ea43ab9b974a683a6"
 }
-=======
->>>>>>> c1f8472 (bunchostuff)
 
-=======
->>>>>>> c1f84726da83506f3defaf45d719b6567cb005db
 [deps]
 
-source_file="res://models/BEANS_bean.png"
-dest_files=["res://.godot/imported/BEANS_bean.png-0af968ec6fad025c2d308d8cc68ef4cb.s3tc.ctex"]
+source_file="res://models/bread_Material Base Color.png"
+dest_files=["res://.godot/imported/bread_Material Base Color.png-e735e174e0eee06151b0832d66367ccf.s3tc.ctex"]
 
 [params]
 
