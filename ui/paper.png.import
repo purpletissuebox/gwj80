@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://dt7q214xub4xu"
-
-path="res://.godot/imported/bussnessman.png-5fa3d44c1cfb5197f0ba0e88a0ab19f2.ctex"
+uid="uid://kg4kb5ek5tlg"
+path="res://.godot/imported/paper.png-b24bb5bb0911ecab45951f792dd6f693.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bussnessman.png"
-dest_files=["res://.godot/imported/bussnessman.png-5fa3d44c1cfb5197f0ba0e88a0ab19f2.ctex"]
+source_file="res://ui/paper.png"
+dest_files=["res://.godot/imported/paper.png-b24bb5bb0911ecab45951f792dd6f693.ctex"]
 
 [params]
 

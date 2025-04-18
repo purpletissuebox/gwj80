@@ -20,6 +20,10 @@ boot_splash/show_image=false
 SignalBus="*res://drivers/signal_bus.gd"
 AudioDriver="*res://drivers/audio.gd"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 turn_left={
