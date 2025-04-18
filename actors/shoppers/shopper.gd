@@ -3,7 +3,6 @@ class_name Shopper extends CharacterBody3D
 @onready var sprite_3d: Sprite3D = $Sprite3D
 @onready var navigation_controller: ShopperController = $NavigationController
 @onready var money_emitter: GPUParticles3D = $MoneyEmitter
-@onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 @export_category("Shopper Properties")
 @export var monetaryValueOfLife : int = 0
@@ -15,7 +14,7 @@ const avatars := [preload("res://sprites/brewboy.png"), preload("res://sprites/b
 
 signal releasedFromMortalCoil
 
-var collision_force = 1
+var collision_force = 5
 
 func _ready() -> void:
 	match representationOfTheSoul:
@@ -34,7 +33,7 @@ func _ready() -> void:
 		_:
 			sprite_3d.texture = load("res://actors/shoppers/eldenRingHarrison.png")
 			monetaryValueOfLife = 0
-	sprite_3d.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	sprite_3d.billboard = BaseMaterial3D.BILLBOARD_FIXED_Y
 	
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
@@ -48,7 +47,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 		money_emitter.emitting = true
 		sprite_3d.billboard = BaseMaterial3D.BILLBOARD_DISABLED
-		audio_stream_player_3d.play()
+		AudioDriver.play_sfx("res://sounds/sound_effects/kaching.ogg", 2.0)
 		releasedFromMortalCoil.emit()
 		SignalBus.change_money.emit(monetaryValueOfLife)
 		
