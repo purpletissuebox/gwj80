@@ -1,12 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://c67sv6y1yi3jq"]
+[gd_scene load_steps=9 format=3 uid="uid://c67sv6y1yi3jq"]
 
 [ext_resource type="Script" uid="uid://dev660anwir85" path="res://actors/shoppers/shopper.gd" id="1_ex0ru"]
 [ext_resource type="Texture2D" uid="uid://b7fcucht0ib1v" path="res://actors/shoppers/eldenRingHarrison.png" id="2_1t37o"]
 [ext_resource type="Script" uid="uid://brk4m3iufcy3i" path="res://actors/shoppers/shopper_controller.gd" id="3_8mqvt"]
+[ext_resource type="AudioStream" uid="uid://c326ktce62vkm" path="res://sounds/sound_effects/kaching.ogg" id="4_1t37o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_80c3a"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ex0ru"]
+emission_shape = 2
+emission_sphere_radius = 1.0
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = 34.6
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_threo"]
+albedo_color = Color(0.0949687, 0.569742, 5.77569e-07, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_1t37o"]
+material = SubResource("StandardMaterial3D_threo")
+text = "$"
+font_size = 120
+
 [node name="CharacterBody3D" type="CharacterBody3D"]
+collision_layer = 0
 script = ExtResource("1_ex0ru")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -17,14 +34,40 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 texture = ExtResource("2_1t37o")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-debug_enabled = true
 
 [node name="NavigationController" type="Node" parent="." node_paths=PackedStringArray("body")]
 script = ExtResource("3_8mqvt")
 body = NodePath("..")
+speed = 30
 
 [node name="FaffAroundTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 one_shot = true
 
+[node name="DeathTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_80c3a")
+
+[node name="MoneyEmitter" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.123493, 0.137872, 0.0128144)
+emitting = false
+amount = 40
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_ex0ru")
+draw_pass_1 = SubResource("TextMesh_1t37o")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_1t37o")
+
+[connection signal="releasedFromMortalCoil" from="." to="NavigationController" method="_on_released_from_mortal_coil"]
 [connection signal="timeout" from="FaffAroundTimer" to="NavigationController" method="get_moving"]
+[connection signal="timeout" from="DeathTimer" to="NavigationController" method="_so_long"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
