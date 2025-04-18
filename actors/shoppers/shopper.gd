@@ -4,15 +4,34 @@ class_name Shopper extends CharacterBody3D
 @onready var navigation_controller: ShopperController = $NavigationController
 @onready var money_emitter: GPUParticles3D = $MoneyEmitter
 
+@export_category("Shopper Properties")
 @export var monetaryValueOfLife : int = 0
-@export var representationOfTheSoul : CompressedTexture2D
+@export_enum("Brewboy", "Bussnessman", "Granny", "Karen") var representationOfTheSoul
+
+const avatars := [preload("res://sprites/brewboy.png"), preload("res://sprites/bussnessman.png"),
+				  preload("res://sprites/grannynanny.png"), preload("res://sprites/Karen.png")]
 
 signal releasedFromMortalCoil
 
 var collision_force = 1
 
 func _ready() -> void:
-	sprite_3d.texture = load("res://actors/shoppers/eldenRingHarrison.png")
+	match representationOfTheSoul:
+		"Brewboy":
+			sprite_3d.texture = avatars[0]
+			monetaryValueOfLife =  randi_range(10,50)
+		"Bussnessman":
+			sprite_3d.texture = avatars[1]
+			monetaryValueOfLife =  randi_range(100,300)
+		"Granny":
+			sprite_3d.texture = avatars[2]
+			monetaryValueOfLife =  randi_range(40,100)
+		"Karen":
+			sprite_3d.texture = avatars[3]
+			monetaryValueOfLife =  randi_range(60,120)
+		_:
+			sprite_3d.texture = load("res://actors/shoppers/eldenRingHarrison.png")
+			monetaryValueOfLife = 0
 	sprite_3d.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	
 func _physics_process(_delta: float) -> void:
