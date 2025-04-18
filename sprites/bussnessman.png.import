@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1epwu1tvevby"
-path="res://.godot/imported/BEANS_bean.png-0af968ec6fad025c2d308d8cc68ef4cb.ctex"
+uid="uid://dt7q214xub4xu"
+path="res://.godot/imported/bussnessman.png-5fa3d44c1cfb5197f0ba0e88a0ab19f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/BEANS_bean.png"
-dest_files=["res://.godot/imported/BEANS_bean.png-0af968ec6fad025c2d308d8cc68ef4cb.ctex"]
+source_file="res://sprites/bussnessman.png"
+dest_files=["res://.godot/imported/bussnessman.png-5fa3d44c1cfb5197f0ba0e88a0ab19f2.ctex"]
 
 [params]
 
