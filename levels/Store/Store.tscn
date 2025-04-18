@@ -1,10 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://6vn6k5tk72ed"]
+[gd_scene load_steps=17 format=3 uid="uid://6vn6k5tk72ed"]
 
 [ext_resource type="PackedScene" uid="uid://cxuddo8awlyri" path="res://levels/Store/Floor.tscn" id="1_55sxh"]
-[ext_resource type="PackedScene" uid="uid://d2d7kcx7u08vp" path="res://models/theGreatWallOfBEAN.glb" id="2_bwiar"]
+[ext_resource type="PackedScene" uid="uid://dib115j5dc2bq" path="res://models/theGreatWallOfBEAN.glb" id="2_bwiar"]
 [ext_resource type="PackedScene" uid="uid://ckq3uhh2kdqf0" path="res://levels/Store/Walls.tscn" id="3_7nddf"]
-[ext_resource type="PackedScene" uid="uid://xttrjiexxn3q" path="res://models/2doorsdown.glb" id="4_ivk8j"]
-[ext_resource type="PackedScene" uid="uid://x4ldxqf7fvie" path="res://models/counter.glb" id="5_bb5ro"]
+[ext_resource type="PackedScene" uid="uid://bvilmhlo2ho16" path="res://models/2doorsdown.glb" id="4_ivk8j"]
+[ext_resource type="PackedScene" uid="uid://3n5qsvxqoumw" path="res://models/counter.glb" id="5_bb5ro"]
 [ext_resource type="PackedScene" uid="uid://b3eixshvww2g5" path="res://levels/Store/Aisle/Aisle1.tscn" id="6_lyk3v"]
 [ext_resource type="PackedScene" uid="uid://dytehtuv78onm" path="res://levels/Store/Aisle/Aisle2.tscn" id="7_xm203"]
 [ext_resource type="PackedScene" uid="uid://1ikky8r3see" path="res://levels/Store/Aisle/Aisle3.tscn" id="8_rplgv"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://rlhv8hud78ae" path="res://levels/Store/Aisle/Aisle8.tscn" id="13_lothm"]
 [ext_resource type="PackedScene" uid="uid://dq4c3i7drdv6x" path="res://actors/player/player.tscn" id="14_npkuy"]
 [ext_resource type="PackedScene" uid="uid://yg3y8bgn8phm" path="res://levels/Store/Ceiling.tscn" id="15_vkcuq"]
+[ext_resource type="PackedScene" uid="uid://8x44onkslefx" path="res://ui/user_interface.tscn" id="16_7bl71"]
 
 [node name="Store" type="Node3D"]
 
@@ -63,3 +64,5 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108, 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36, 0)
 
 [node name="Player" parent="." instance=ExtResource("14_npkuy")]
+
+[node name="UserInterface" parent="." instance=ExtResource("16_7bl71")]
