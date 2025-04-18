@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c67sv6y1yi3jq"]
+[gd_scene load_steps=9 format=3 uid="uid://c67sv6y1yi3jq"]
 
 [ext_resource type="Script" uid="uid://dev660anwir85" path="res://actors/shoppers/shopper.gd" id="1_ex0ru"]
 [ext_resource type="Texture2D" uid="uid://b7fcucht0ib1v" path="res://actors/shoppers/eldenRingHarrison.png" id="2_1t37o"]
 [ext_resource type="Script" uid="uid://brk4m3iufcy3i" path="res://actors/shoppers/shopper_controller.gd" id="3_8mqvt"]
+[ext_resource type="AudioStream" uid="uid://c326ktce62vkm" path="res://sounds/sound_effects/kaching.ogg" id="4_1t37o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_80c3a"]
 
@@ -33,7 +34,6 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 texture = ExtResource("2_1t37o")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-debug_enabled = true
 
 [node name="NavigationController" type="Node" parent="." node_paths=PackedStringArray("body")]
 script = ExtResource("3_8mqvt")
@@ -63,6 +63,9 @@ amount = 40
 one_shot = true
 process_material = SubResource("ParticleProcessMaterial_ex0ru")
 draw_pass_1 = SubResource("TextMesh_1t37o")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_1t37o")
 
 [connection signal="releasedFromMortalCoil" from="." to="NavigationController" method="_on_released_from_mortal_coil"]
 [connection signal="timeout" from="FaffAroundTimer" to="NavigationController" method="get_moving"]

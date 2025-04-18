@@ -9,15 +9,17 @@ class_name ShopperController extends Node
 # TODO.hw - add a Manager control scheme that wanders the store and if seeing the player hunts
 # them down to kick them out.
 
+@onready var wander_distance = 5*body.scale.x
 @onready var navigation_agent_3d: NavigationAgent3D = $"../NavigationAgent3D"
+
 @export var body: CharacterBody3D
 @export var state: States
 @export var speed = 5
 @export var acceleration = 1
+
 var dir: Vector3
 var death_rotation = deg_to_rad(15)
 enum States {INIT, MEANDER, LINGER, TRAVERSE, PAUSED}
-
 func _ready() -> void:
 	state = States.TRAVERSE
 
@@ -50,7 +52,7 @@ func _find_destination() -> Vector3:
 func _meander():
 	if %FaffAroundTimer.is_stopped():
 		%FaffAroundTimer.start(randf_range(2.0,6.0))
-	navigation_agent_3d.target_position = body.position + Vector3(randf_range(-5.0,5), 0, randf_range(-5.0,5))
+	navigation_agent_3d.target_position = body.position + Vector3(randf_range(-wander_distance,wander_distance), 0, randf_range(-wander_distance,wander_distance))
 	
 func _linger():
 	if %FaffAroundTimer.is_stopped():

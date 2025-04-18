@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://creasdc0bg2nm"]
+
+[ext_resource type="Script" uid="uid://bwde0shrrdka5" path="res://levels/Store/shopper_spawning.gd" id="1_7d4t2"]
+
+[node name="ShopperSpawner" type="Node3D"]
+script = ExtResource("1_7d4t2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_enter_shopper"]
