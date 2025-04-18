@@ -18,13 +18,10 @@ func _get_spawn_points():
 	var ary = []
 	for child in get_children():
 		if child is Marker3D:
-			print("adding child")
 			ary += [child]
 	return ary
 	
 func _enter_shopper():
-	print("SPAWNING")
-	print(_get_spawn_points())
 	if spawnPoints.size() < 1:
 		spawnPoints = _get_spawn_points()
 		return
