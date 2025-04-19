@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b88ds8tebxit7"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1duxd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4a77"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="BlackTile" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("PlaneMesh_1duxd")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_b4a77")

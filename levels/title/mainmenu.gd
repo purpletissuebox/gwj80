@@ -1,7 +1,7 @@
 extends Control
 
 func start_game():
-	pass
+	get_tree().change_scene_to_file("res://levels/Store/Store.tscn")
 
 func do_options():
 	pass

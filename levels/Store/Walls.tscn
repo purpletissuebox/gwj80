@@ -1,0 +1,336 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckq3uhh2kdqf0"]
+
+[ext_resource type="PackedScene" uid="uid://pk72lj82ssvm" path="res://levels/Store/WallUnit.tscn" id="1_fs6vk"]
+
+[node name="Walls" type="Node3D"]
+
+[node name="EntryWalls" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+
+[node name="WestWall" type="Node3D" parent="EntryWalls"]
+
+[node name="WallUnit" parent="EntryWalls/WestWall" instance=ExtResource("1_fs6vk")]
+
+[node name="WallUnit2" parent="EntryWalls/WestWall" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit3" parent="EntryWalls/WestWall" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
+
+[node name="SouthWall" type="Node3D" parent="EntryWalls"]
+
+[node name="WallUnit" parent="EntryWalls/SouthWall" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 9)
+
+[node name="WallUnit2" parent="EntryWalls/SouthWall" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 27)
+
+[node name="WallUnit3" parent="EntryWalls/SouthWall" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 45)
+
+[node name="WallUnit4" parent="EntryWalls/SouthWall" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 63)
+
+[node name="WallUnit5" parent="EntryWalls/SouthWall" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 81)
+
+[node name="WallUnit6" parent="EntryWalls/SouthWall" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 99)
+
+[node name="EastWall" type="Node3D" parent="EntryWalls"]
+
+[node name="WallUnit" parent="EntryWalls/EastWall" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 108)
+
+[node name="WallUnit2" parent="EntryWalls/EastWall" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18, 0, 108)
+
+[node name="WallUnit3" parent="EntryWalls/EastWall" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 36, 0, 108)
+
+[node name="Building" type="Node3D" parent="."]
+
+[node name="SouthWallLeft" type="Node3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 9, -72)
+
+[node name="WallUnit" parent="Building/SouthWallLeft" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 9)
+
+[node name="WallUnit2" parent="Building/SouthWallLeft" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 27)
+
+[node name="WallUnit3" parent="Building/SouthWallLeft" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 45)
+
+[node name="WallUnit4" parent="Building/SouthWallLeft" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 63)
+
+[node name="SouthWallRight" type="Node3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 9, 108)
+
+[node name="WallUnit" parent="Building/SouthWallRight" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 9)
+
+[node name="WallUnit2" parent="Building/SouthWallRight" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 27)
+
+[node name="WallUnit3" parent="Building/SouthWallRight" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 45)
+
+[node name="WallUnit4" parent="Building/SouthWallRight" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 63)
+
+[node name="WallUnit" parent="Building/SouthWallRight/WallUnit4" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="WallUnit" parent="Building/SouthWallRight/WallUnit4/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="WallUnit" parent="Building/SouthWallRight/WallUnit4/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="WallUnit" parent="Building/SouthWallRight/WallUnit4/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="WallUnit" parent="Building/SouthWallRight/WallUnit4/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="WallUnit" parent="Building/SouthWallRight/WallUnit4/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="WallUnit" parent="Building/SouthWallRight/WallUnit4/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="WallUnit" parent="Building/SouthWallRight/WallUnit4/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="WallUnit" parent="Building/SouthWallRight/WallUnit4/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="WallUnit" parent="Building/SouthWallRight/WallUnit4/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="WallUnit" parent="Building/SouthWallRight/WallUnit4/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="WallUnit" parent="Building/SouthWallRight/WallUnit4/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="WallUnit" parent="Building/SouthWallRight/WallUnit4/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="WallUnit" parent="Building/SouthWallRight/WallUnit4/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="WestWall" type="Node3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -72)
+
+[node name="WallUnit" parent="Building/WestWall" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/WestWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="NorthWall" type="Node3D" parent="Building"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 414, 9, -54)
+
+[node name="WallUnit" parent="Building/NorthWall" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 9)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit" parent="Building/NorthWall/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="EastWall" type="Node3D" parent="Building"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 396, 0, 432)
+
+[node name="WallUnit" parent="Building/EastWall" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="WallUnit2" parent="Building/EastWall/WallUnit/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2/WallUnit2" instance=ExtResource("1_fs6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)

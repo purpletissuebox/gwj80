@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmpgl3a4y02iq"]
+
+[ext_resource type="PackedScene" uid="uid://bfc3880ux8kxi" path="res://levels/Store/CeilingTile.tscn" id="1_bdqnq"]
+
+[node name="CeilingTileset" type="Node3D"]
+
+[node name="CeilingTile" parent="." instance=ExtResource("1_bdqnq")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 6)
+
+[node name="CeilingTile2" parent="." instance=ExtResource("1_bdqnq")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, -6)
+
+[node name="CeilingTile3" parent="." instance=ExtResource("1_bdqnq")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6, 0, 0)
+
+[node name="CeilingTile4" parent="." instance=ExtResource("1_bdqnq")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -6, 0, 0)
+
+[node name="CeilingTile5" parent="." instance=ExtResource("1_bdqnq")]
+
+[node name="CeilingTile6" parent="." instance=ExtResource("1_bdqnq")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6, 0, 6)
+
+[node name="CeilingTile7" parent="." instance=ExtResource("1_bdqnq")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6, 0, -6)
+
+[node name="CeilingTile8" parent="." instance=ExtResource("1_bdqnq")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -6, 0, 6)
+
+[node name="CeilingTile9" parent="." instance=ExtResource("1_bdqnq")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -6, 0, -6)
