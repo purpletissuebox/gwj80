@@ -101,3 +101,6 @@ car = NodePath("..")
 [node name="Steering" type="Node" parent="." node_paths=PackedStringArray("car")]
 script = ExtResource("4_yw30f")
 car = NodePath("..")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -9, 2, 0)
