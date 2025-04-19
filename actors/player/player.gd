@@ -1,73 +1,43 @@
 class_name ShoppingCart extends RigidBody3D
 
-@export_category("Suspension")
-@export var rest_height: float = 0.5
-@export var spring_strength: float = 1000
-@export var damping: float = 25
-@export var wheel_radius: float = 0.3
+@export var spring_strength:float = 22
+@export var damping:float = 1
+@export var engine_curve:Curve
+@export var steer_curve:Curve
+@export var top_speed:float = 100
+@export var zero_to_sixty:float = 1.0
+@export var brake_strength:float = 2.0
+@export var wheel_grip:float = 40
+@export var steer_strength:float = 12
+@export_range(0,360,1,"radians_as_degrees") var max_steer_rate:float = PI
+@export var wheels:Array[RayCast3D]
 
-@export_category("Engine")
-@export var engine_strength: float = 100
-
-@export_category("Steering")
-@export_range(0,90,1,"radians_as_degrees") var max_angle: float = PI/6
-@export var grip_front: float = 1.0
-@export var grip_rear: float = 1.5
-@export var front_wheels:Array[RayCast3D]
-
-var desired_thrust:float = 0
-var prev_vel:Vector3 = Vector3.ZERO
-var engine_sound:AudioStreamPlayer = null
-var drift_sound:AudioStreamPlayer = null
-var sound_cooldown:float = 0.0
+var engine_power:float
 
 func _ready():
-	AudioDriver.play_bgm("res://levels/test_shop/bgm.mp3", 0)
+	var acc = 0
+	for i in 100:
+		acc += self.engine_curve.sample(i/100.0)
+	self.engine_power = (top_speed/zero_to_sixty)/(acc/100)
 
-func _physics_process(delta):
-	if self.sound_cooldown > 0:
-		self.sound_cooldown -= delta
-		self.prev_vel = self.linear_velocity
-		return
-	
-	if (self.linear_velocity - self.prev_vel).length() > 30.0:
-		AudioDriver.play_sfx("res://actors/player/sounds/crash.mp3")
-		cancelSound(1)
-		cancelSound(0)
-		self.sound_cooldown = 1.2
-		return
-	
-	if self.angular_velocity.length() > 3.0 or desired_thrust * self.linear_velocity.dot(-self.global_basis.z) <= -0.1:
-		if !drift_sound:
-			if self.front_wheels[0].is_colliding() and self.front_wheels[1].is_colliding():
-				self.drift_sound = AudioDriver.play_sfx("res://actors/player/sounds/slide.mp3")
-	else:
-		cancelSound(1)
-	
-	if self.desired_thrust * self.linear_velocity.dot(-self.global_basis.z) >= 0.1:
-		if !engine_sound:
-			self.engine_sound = AudioDriver.play_sfx("res://actors/player/sounds/accel.mp3")
-	else:
-		cancelSound(0)
-	
-	self.prev_vel = self.linear_velocity
+func _physics_process(delta: float) -> void:
+	pass
+	#print(self.linear_velocity)
 
-func cancelSound(which:int):
-	if which:
-		if self.drift_sound:
-			self.drift_sound.stop()
-			self.drift_sound = null
-	else:
-		if self.engine_sound:
-			self.engine_sound.stop()
-			self.engine_sound = null
+func apply_force_relative(force:Vector3, lcl_pos:Vector3):
+	var myrotation:Transform3D = self.global_transform
+	var end_position:Vector3 = myrotation*lcl_pos
+	self.apply_force(force, end_position - self.global_position)
 
-func _process(delta):
-	self.desired_thrust = Input.get_axis("brake", "gas_pedal")
-	var desired_angle = Input.get_axis("turn_right", "turn_left") * self.max_angle
-	
-	for w in self.front_wheels:
-		w.rotation.y = lerp(w.rotation.y, desired_angle, 5*delta)
+func num_wheels_colliding():
+	var acc:int = 0
+	for w in self.wheels:
+		acc += 1 if w.is_colliding() else 0 #you can access nonexistent members on classes but cant add bool + int. weak.
+	return acc
 
-func get_wheel_velocity(w:Node3D):
-	return self.linear_velocity + self.angular_velocity.cross(w.global_position - self.global_position)
+func get_average_floor_normal():
+	var acc:Vector3 = Vector3.ZERO
+	for w in self.wheels:
+		if w.is_colliding():
+			acc += w.get_collision_normal()
+	return (acc/self.wheels.size()).normalized()
