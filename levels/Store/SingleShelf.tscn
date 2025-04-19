@@ -18,5 +18,5 @@ transform = Transform3D(2.05544, 0, 0, 0, 0.598268, 0, 0, 0, 2.05544, -0.873173,
 shape = SubResource("BoxShape3D_rl2nw")
 
 [node name="FoodSpawn" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.379946, 11.4843, 4.70045)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.976344, 10.5053, 4.50947)
 gizmo_extents = 1.0
