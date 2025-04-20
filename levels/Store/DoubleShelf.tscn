@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://y6wh1u1d3wxi"]
+[gd_scene load_steps=5 format=3 uid="uid://y6wh1u1d3wxi"]
 
 [ext_resource type="Script" uid="uid://cw1o2egkocpwt" path="res://actors/food/food_spawn.gd" id="1_iorjc"]
 [ext_resource type="PackedScene" uid="uid://dib115j5dc2bq" path="res://models/theGreatWallOfBEAN.glb" id="1_vrjv1"]
+[ext_resource type="PackedScene" uid="uid://dyjhx6po6mvhs" path="res://actors/food/food_spawn.tscn" id="3_bmref"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iorjc"]
 size = Vector3(2.38391, 34.9643, 27.2839)
@@ -17,10 +18,8 @@ script = ExtResource("1_iorjc")
 transform = Transform3D(2.05544, 0, 0, 0, 0.598268, 0, 0, 0, 2.05544, -0.873173, 6.83588, -0.298923)
 shape = SubResource("BoxShape3D_iorjc")
 
-[node name="FoodSpawn2" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22567, 2.89234, -18.7661)
-gizmo_extents = 1.0
+[node name="FoodSpawn" parent="." instance=ExtResource("3_bmref")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50133, 7.81536, 15.4134)
 
-[node name="FoodSpawn" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.827679, 7.22427, 20.801)
-gizmo_extents = 1.0
+[node name="FoodSpawn2" parent="." instance=ExtResource("3_bmref")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.53153, -19.9601)

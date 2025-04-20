@@ -22,11 +22,8 @@ func register_shelf(shelf):
 
 func select_food_spawn():
 	var target = shelves.pick_random()
-	print(target)
 	var chosen_food = range(5).pick_random()
-	print(chosen_food)
 	SignalBus.spawn_food.emit(target, foods[chosen_food], chosen_food)
 
 func _on_food_removed(removed_food):
-	print("You removed a foods")
 	select_food_spawn()
