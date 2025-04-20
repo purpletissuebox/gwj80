@@ -5,12 +5,26 @@ script/source = "extends Control
 
 func _ready() -> void:
 	SignalBus.game_over.connect(on_game_over)
-
+	SignalBus.winner.connect(on_winner)
+	
 func _on_reset_button_pressed() -> void:
 		get_tree().change_scene_to_file(\"res://levels/Store/NewStore.tscn\")
 
+func on_winner():
+	self.visible = true
+	%Label.text = \"WINNER WINNER CHICKEN DINNER\"
+	%Label.set(\"font_color\", Color.DARK_GREEN)
+	%Label.set(\"bg_color\", Color.PALE_GREEN)
+	%Label.set(\"border_color\", Color.DARK_GREEN)
+	var player = get_tree().root.find_child(\"Player\", true, false)
+	player.process_mode = Node.PROCESS_MODE_DISABLED
+	
 func on_game_over() -> void:
 	self.visible = true
+	%Label.text = \"GAME OVER\"
+	%Label.set(\"font_color\", Color.RED)
+	%Label.set(\"bg_color\", Color.YELLOW)
+	%Label.set(\"border_color\", Color.RED)
 	var player = get_tree().root.find_child(\"Player\", true, false)
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 "
@@ -26,6 +40,7 @@ expand_margin_left = 10.0
 expand_margin_right = 10.0
 
 [sub_resource type="SystemFont" id="SystemFont_m16wd"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_x1dv2"]
 font = SubResource("SystemFont_m16wd")
@@ -68,6 +83,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_rhky5")
 text = "GAME OVER"
