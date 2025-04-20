@@ -7,9 +7,10 @@
 size = Vector3(2.38391, 34.9272, 13.704)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j4krp"]
-size = Vector3(1.84839, 9.75373, 19.8473)
+size = Vector3(1.84839, 9.75373, 12.2409)
 
 [node name="SingleShelf" type="Node3D"]
+script = ExtResource("1_gfg74")
 
 [node name="theSmallWallOfBEAN" parent="." instance=ExtResource("1_j4krp")]
 
@@ -22,7 +23,6 @@ shape = SubResource("BoxShape3D_rl2nw")
 [node name="FoodSpawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.976344, 10.4313, 4.50947)
 gizmo_extents = 1.0
-script = ExtResource("1_gfg74")
 
 [node name="Camera3D" type="Camera3D" parent="FoodSpawn"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.83865, 1.29841, 0)
@@ -33,7 +33,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FoodSpawn/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57684, -5.1331, -4.95624)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57684, -5.1331, 0.687369)
 shape = SubResource("BoxShape3D_j4krp")
 
-[connection signal="area_entered" from="FoodSpawn/Area3D" to="FoodSpawn" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="FoodSpawn/Area3D" to="." method="pickup_food"]
