@@ -9,7 +9,7 @@ func _physics_process(_delta):
 	var angvel = car.angular_velocity.dot(car.global_basis.y)
 	self.rotation.z = angvel*0.1
 	
-	self.rotation += 0.02*jitter()
+	self.rotation += 0.03*jitter()
 
 func jitter():
 	var sratio = car.linear_velocity.dot(car.global_basis.x)
