@@ -38,7 +38,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 343.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -55,7 +54,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/LeftMenu/CurrentFoodContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(190, 261)
+size = Vector2i(190, 169)
 render_target_update_mode = 4
 script = ExtResource("1_5skvp")
 
@@ -76,7 +75,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/LeftMenu/ArrowContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(190, 196)
+size = Vector2i(190, 128)
 render_target_update_mode = 4
 
 [node name="cone" parent="HBoxContainer/LeftMenu/ArrowContainer/SubViewport" instance=ExtResource("2_5skvp")]
