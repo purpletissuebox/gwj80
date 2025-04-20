@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://byu21rqani16k"]
+[gd_scene load_steps=7 format=3 uid="uid://byu21rqani16k"]
 
 [sub_resource type="GDScript" id="GDScript_rhky5"]
 script/source = "extends Control
@@ -12,30 +12,24 @@ func _on_reset_button_pressed() -> void:
 
 func on_winner():
 	self.visible = true
-	%Label.text = \"WINNER WINNER CHICKEN DINNER\"
-	%Label.set(\"font_color\", Color.DARK_GREEN)
-	%Label.set(\"bg_color\", Color.PALE_GREEN)
-	%Label.set(\"border_color\", Color.DARK_GREEN)
+	%WinnerLabel.visible = true
 	var player = get_tree().root.find_child(\"Player\", true, false)
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 	
 func on_game_over() -> void:
 	self.visible = true
-	%Label.text = \"GAME OVER\"
-	%Label.set(\"font_color\", Color.RED)
-	%Label.set(\"bg_color\", Color.YELLOW)
-	%Label.set(\"border_color\", Color.RED)
+	%GameOverLabel.visible = true
 	var player = get_tree().root.find_child(\"Player\", true, false)
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 "
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhky5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m16wd"]
 bg_color = Color(1, 1, 0, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.8, 0, 0, 1)
+border_color = Color(1, 0, 0, 1)
 expand_margin_left = 10.0
 expand_margin_right = 10.0
 
@@ -46,6 +40,21 @@ subpixel_positioning = 0
 font = SubResource("SystemFont_m16wd")
 font_size = 58
 font_color = Color(1, 0, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhky5"]
+bg_color = Color(0.596078, 0.984314, 0.596078, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0.392157, 0, 1)
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_rhky5"]
+font = SubResource("SystemFont_m16wd")
+font_size = 58
+font_color = Color(0, 0.392157, 0, 1)
 
 [node name="GameOverMenu" type="Control"]
 layout_mode = 3
@@ -82,12 +91,23 @@ offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="GameOverLabel" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_rhky5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m16wd")
 text = "GAME OVER"
 label_settings = SubResource("LabelSettings_x1dv2")
+horizontal_alignment = 1
+
+[node name="WinnerLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhky5")
+text = "WINNER WINNER
+CHICKEN DINNER"
+label_settings = SubResource("LabelSettings_rhky5")
 horizontal_alignment = 1
 
 [node name="ResetButton" type="Button" parent="VBoxContainer"]

@@ -9,11 +9,11 @@ var foods = [
 	preload("res://models/mushyfriend.glb"),
 ]
 var grocery_prices = {
-	SignalBus.beans:20,
- 	SignalBus.apple:55,
-	SignalBus.bread:101,
-	SignalBus.broccoli:34,
-	SignalBus.mushroom:17,
+	SignalBus.foods.beans:20,
+ 	SignalBus.foods.apple:55,
+	SignalBus.foods.bread:101,
+	SignalBus.foods.broccoli:34,
+	SignalBus.foods.mushroom:17,
 }
 var grocery_list = []
 var groceries_acquired = []
@@ -44,13 +44,14 @@ func _on_food_removed(removed_food):
 
 func _generate_grocery_list():
 	for i in grocery_total:
-		grocery_list += [randi_range(SignalBus.beans,SignalBus.mushroom)]
+		grocery_list += [randi_range(SignalBus.foods.beans,SignalBus.foods.mushroom)]
 
 func on_checkout():
 	if grocery_list.is_empty() and _check_money():
 		SignalBus.winner.emit()
 		
 func _check_money():
+	print("to enter new vegas you must submit to a credit check")
 	var total_needed = 0
 	var wallet = get_tree().root.find_child("Wallet", true, false)
 	for grocery in groceries_acquired:
