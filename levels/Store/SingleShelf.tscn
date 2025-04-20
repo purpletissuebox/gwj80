@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://h0ujulfplo05"]
+
+[ext_resource type="Script" uid="uid://cw1o2egkocpwt" path="res://actors/food/food_spawn.gd" id="1_gfg74"]
+[ext_resource type="PackedScene" uid="uid://d35lt7f1yrrdw" path="res://models/theSmallWallOfBEAN.glb" id="1_j4krp"]
+[ext_resource type="PackedScene" uid="uid://dyjhx6po6mvhs" path="res://actors/food/food_spawn.tscn" id="3_gfg74"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rl2nw"]
+size = Vector3(2.38391, 34.9272, 13.704)
+
+[node name="SingleShelf" type="Node3D"]
+script = ExtResource("1_gfg74")
+
+[node name="theSmallWallOfBEAN" parent="." instance=ExtResource("1_j4krp")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="theSmallWallOfBEAN"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="theSmallWallOfBEAN/StaticBody3D"]
+transform = Transform3D(2.05544, 0, 0, 0, 0.598268, 0, 0, 0, 2.05544, -0.873173, 10.1151, -0.616799)
+shape = SubResource("BoxShape3D_rl2nw")
+
+[node name="FoodSpawn" parent="." instance=ExtResource("3_gfg74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.976344, 10.8646, 4.50947)
+
+[node name="FoodSpawn2" parent="." instance=ExtResource("3_gfg74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.674463, 16.1798, -10.5593)

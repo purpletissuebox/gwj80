@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyjhx6po6mvhs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j4krp"]
+size = Vector3(1.84839, 15.7431, 12.2409)
+
+[node name="FoodSpawn" type="Marker3D"]
+gizmo_extents = 1.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.05207, 1.29841, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57684, -8.12781, 0.687369)
+shape = SubResource("BoxShape3D_j4krp")

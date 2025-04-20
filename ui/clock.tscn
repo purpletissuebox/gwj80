@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://br4bfrthtfuqo"]
+
+[ext_resource type="Texture2D" uid="uid://1hur2q5m2vto" path="res://sprites/clock/clock_face.png" id="1_a8dqu"]
+[ext_resource type="Texture2D" uid="uid://bg2jttdc6aqe7" path="res://sprites/clock/clock_arm.png" id="2_f4i75"]
+
+[sub_resource type="GDScript" id="GDScript_f4i75"]
+script/source = "extends Control
+
+@onready var timer: Timer = $GameTimer
+@onready var clock_arrow_anchor: Control = $ClockArrowAnchor
+
+var degPerTick := 1
+var playOnce = [true,true]
+var prevAudioStream : AudioStreamPlayer
+var paVA = [
+	\"res://sounds/pa/Clean/crash.mp3\",\"res://sounds/pa/Clean/cybertruck.mp3\",\"res://sounds/pa/Clean/enough_caffiene.mp3\",
+	\"res://sounds/pa/Clean/Fiesta.mp3\", \"res://sounds/pa/Clean/mark.mp3\", \"res://sounds/pa/Clean/maya_fanny.mp3\",
+	\"res://sounds/pa/Clean/sale.mp3\", \"res://sounds/pa/Clean/uhoh.mp3\", \"res://sounds/pa/Explicit/mikeCox.mp3\"
+]
+
+func _ready() -> void:
+	if timer:
+		degPerTick = 360/timer.wait_time
+
+func _process(delta: float) -> void:
+	clock_arrow_anchor.rotation_degrees += degPerTick*delta
+
+	if timer.time_left < timer.wait_time/2 and playOnce[0]:
+		# TODO.hw stop current PA from playing and replace with this one
+		if prevAudioStream: AudioDriver.stop_audio(prevAudioStream, 0)
+		prevAudioStream = AudioDriver.play_sfx(\"res://sounds/pa/Clean/StoreClosing.mp3\", 1.0)
+		playOnce[0] = false
+	elif timer.time_left < timer.wait_time/4 and playOnce[1]:
+		if prevAudioStream: AudioDriver.stop_audio(prevAudioStream, 0)
+		prevAudioStream = AudioDriver.play_sfx(\"res://sounds/pa/Explicit/GETOUT_Doctored.mp3\", 1.0)
+		playOnce[1] = false
+
+func _on_pa_timer_timeout() -> void:
+	var sound = paVA[randi()%paVA.size()]
+	prevAudioStream = AudioDriver.play_sfx(sound, 0.5)
+
+
+func _on_game_timer_timeout() -> void:
+	SignalBus.game_over.emit()
+"
+
+[node name="Clock" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_f4i75")
+
+[node name="ClockFace" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 822.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_a8dqu")
+
+[node name="ClockArrowAnchor" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 116.0
+offset_top = 88.0
+offset_right = 156.0
+offset_bottom = 128.0
+scale = Vector2(0.2, 0.2)
+
+[node name="ClockArrow" type="TextureRect" parent="ClockArrowAnchor"]
+layout_mode = 2
+offset_left = -359.0
+offset_top = -444.0
+offset_right = 330.0
+offset_bottom = 378.0
+texture = ExtResource("2_f4i75")
+
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 180.0
+one_shot = true
+autostart = true
+
+[node name="PATimer" type="Timer" parent="."]
+wait_time = 27.0
+autostart = true
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="timeout" from="PATimer" to="." method="_on_pa_timer_timeout"]
