@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1ff3o6utaqye"]
+[gd_scene load_steps=4 format=3 uid="uid://c1ff3o6utaqye"]
 
 [ext_resource type="PackedScene" uid="uid://bvilmhlo2ho16" path="res://models/2doorsdown.glb" id="1_4yxlt"]
 [ext_resource type="PackedScene" uid="uid://bvt1t5u0nlxws" path="res://models/backrooms.glb" id="1_x5q0i"]
