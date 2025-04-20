@@ -2,6 +2,13 @@ extends RayCast3D
 
 @export var car:ShoppingCart
 @onready var sparks:GPUParticles3D = $Area3D/GPUParticles3D
+const crash_sounds:Array[String] = [
+	"res://actors/player/sounds/impact0.mp3",
+	"res://actors/player/sounds/impact1.mp3",
+	"res://actors/player/sounds/impact2.mp3",
+	"res://actors/player/sounds/impact3.mp3",
+	"res://actors/player/sounds/impact4.mp3",
+]
 
 var length:float
 
@@ -25,4 +32,5 @@ func spring_force():
 
 func do_sparks(_body):
 	sparks.emitting = true
+	AudioDriver.play_sfx(self.crash_sounds.pick_random(), 0.4)
 	

@@ -1,12 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpnj0gw4bjbdn"]
+[gd_scene load_steps=4 format=3 uid="uid://c1ff3o6utaqye"]
 
 [ext_resource type="PackedScene" uid="uid://bvilmhlo2ho16" path="res://models/2doorsdown.glb" id="1_4yxlt"]
 [ext_resource type="PackedScene" uid="uid://bvt1t5u0nlxws" path="res://models/backrooms.glb" id="1_x5q0i"]
 [ext_resource type="PackedScene" uid="uid://cfmq00p8x12ni" path="res://levels/Store/Wall.tscn" id="2_4j46s"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4j46s"]
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4yxlt"]
 
 [node name="StoreModel" type="Node3D"]
 
@@ -78,74 +74,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.8019, 27.6476, -39.578)
 light_color = Color(0.973632, 0.965712, 0.840443, 1)
 light_energy = 16.0
 omni_range = 4096.0
-
-[node name="WallColliders" type="Node3D" parent="backrooms"]
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="backrooms/WallColliders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 60.2615)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="backrooms/WallColliders/StaticBody3D2"]
-transform = Transform3D(170, 0, 0, 0, 30, 0, 0, 0, 1, -0.509342, 14.9011, 0)
-shape = SubResource("BoxShape3D_4j46s")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="backrooms/WallColliders"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 81.2353, 0, -19.928)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="backrooms/WallColliders/StaticBody3D3"]
-transform = Transform3D(170, 0, 0, 0, 30, 0, 0, 0, 1, -0.509342, 14.9011, 0)
-shape = SubResource("BoxShape3D_4j46s")
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="backrooms/WallColliders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -60.3705)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="backrooms/WallColliders/StaticBody3D4"]
-transform = Transform3D(50, 0, 0, 0, 30, 0, 0, 0, 1, 66.3045, 14.9011, 0)
-shape = SubResource("BoxShape3D_4j46s")
-
-[node name="StaticBody3D5" type="StaticBody3D" parent="backrooms/WallColliders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -60.3705)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="backrooms/WallColliders/StaticBody3D5"]
-transform = Transform3D(170, 0, 0, 0, 30, 0, 0, 0, 1, -0.509342, 14.9011, -11.0853)
-shape = SubResource("BoxShape3D_4j46s")
-
-[node name="StaticBody3D6" type="StaticBody3D" parent="backrooms/WallColliders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.5662, 0, -60.3705)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="backrooms/WallColliders/StaticBody3D6"]
-transform = Transform3D(40, 0, 0, 0, 30, 0, 0, 0, 1, -1.04117, 14.9011, 0)
-shape = SubResource("BoxShape3D_4j46s")
-
-[node name="StaticBody3D7" type="StaticBody3D" parent="backrooms/WallColliders"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 81.2353, 0, -19.928)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="backrooms/WallColliders/StaticBody3D7"]
-transform = Transform3D(10, 0, 0, 0, 30, 0, 0, 0, 1, 45.6718, 14.9011, -39.8279)
-shape = SubResource("BoxShape3D_4j46s")
-
-[node name="StaticBody3D8" type="StaticBody3D" parent="backrooms/WallColliders"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 81.2353, 0, -19.928)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="backrooms/WallColliders/StaticBody3D8"]
-transform = Transform3D(170, 0, 0, 0, 30, 0, 0, 0, 1, -0.509335, 14.9011, -162.911)
-shape = SubResource("BoxShape3D_4j46s")
-
-[node name="StaticBody3D9" type="StaticBody3D" parent="backrooms/WallColliders"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 81.2353, 0, -19.928)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="backrooms/WallColliders/StaticBody3D9"]
-transform = Transform3D(10, 0, 0, 0, 30, 0, 0, 0, 1, 45.6718, 14.9011, -122.292)
-shape = SubResource("BoxShape3D_4j46s")
-
-[node name="StaticBody3D10" type="StaticBody3D" parent="backrooms/WallColliders"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 81.2353, 0, -19.928)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="backrooms/WallColliders/StaticBody3D10"]
-transform = Transform3D(170, 0, 0, 0, 140, 0, 0, 0, 1, -82.1305, 14.5448, -28.7803)
-shape = SubResource("BoxShape3D_4j46s")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.736359, 0)
-shape = SubResource("WorldBoundaryShape3D_4yxlt")
