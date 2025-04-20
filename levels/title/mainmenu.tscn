@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://danqr3275vjwp"]
+[gd_scene load_steps=6 format=3 uid="uid://danqr3275vjwp"]
 
 [ext_resource type="Script" uid="uid://bpgwh1imu01dx" path="res://levels/title/mainmenu.gd" id="1_1apnq"]
+[ext_resource type="Texture2D" uid="uid://ce672a6wkxn8j" path="res://levels/title/screenwriting-101.png" id="2_j2ixq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rtq5l"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_j2ixq"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_e25x5"]
+font_size = 24
 
 [node name="Mainmenu" type="Control"]
 layout_mode = 3
@@ -65,7 +75,7 @@ text = "START"
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "OPTIONS"
+text = "CREDITS"
 
 [node name="Button3" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -73,10 +83,181 @@ size_flags_vertical = 3
 text = "QUIT
 "
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="VSlider" type="VSlider" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = " "
+label_settings = SubResource("LabelSettings_rtq5l")
+horizontal_alignment = 1
+
 [node name="Control2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="Credits" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.243137, 0.443137, 0.498039, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control2" type="Control" parent="Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Attention Shoppers"
+label_settings = SubResource("LabelSettings_j2ixq")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "A game by Cool Beans Productions"
+label_settings = SubResource("LabelSettings_e25x5")
+horizontal_alignment = 1
+
+[node name="Control3" type="Control" parent="Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Credits/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="Credits/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Credits/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Programmers"
+label_settings = SubResource("LabelSettings_e25x5")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Credits/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Chibbles63
+DesktopCoder1407
+harrisonof
+purpletissuebox
+RagnarokerXIII"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Credits/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Credits/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Artists"
+label_settings = SubResource("LabelSettings_e25x5")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Credits/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Borkf (3D Models, Shoppers)
+harrisonof (Clock Art)"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Credits/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Credits/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Voice Actors"
+label_settings = SubResource("LabelSettings_e25x5")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Credits/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "DarkMatterTsunami (PA System)
+purpletissuebox (Cart)
+RagnarokerXIII (PA System)"
+horizontal_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Credits/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Credits/VBoxContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "Wildcard"
+label_settings = SubResource("LabelSettings_e25x5")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Credits/VBoxContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_j2ixq")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="Credits/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="Credits/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Credits/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Close"
+
+[node name="Control2" type="Control" parent="Credits/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button" to="." method="start_game"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button2" to="." method="do_options"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button2" to="." method="open_credits"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button3" to="." method="quit_game"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/VSlider" to="." method="_on_vol_changed"]
+[connection signal="pressed" from="Credits/VBoxContainer/HBoxContainer2/Button" to="." method="close_credits"]
