@@ -5,7 +5,7 @@
 [sub_resource type="GDScript" id="GDScript_y7pel"]
 script/source = "extends StaticBody3D
 
-func _on_checkout_area_body_entered(body: Node3D) -> void:
+func _on_checkout_area_body_entered(_body: Node3D) -> void:
 	print(\"checking out\")
 	SignalBus.checkout.emit()
 "

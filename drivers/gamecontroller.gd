@@ -57,8 +57,8 @@ func _check_money():
 	for grocery in groceries_acquired:
 		total_needed += grocery_prices[grocery]
 	if total_needed <= wallet.total_money:
-		wallet.total_money - total_needed
-		AudioDriver.play_sfx("res://sounds/sound_effects/kaching.ogg")
+		wallet.total_money -= total_needed
+		AudioDriver.play_sfx("res://sounds/sound_effects/kaching.ogg", 2)
 		return true
 	else:
 		AudioDriver.play_sfx("res://sounds/pa/Clean/mf_pay_for_that.mp3")
