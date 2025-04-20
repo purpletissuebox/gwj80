@@ -13,9 +13,11 @@ var degPerTick := 1
 var playOnce = [true,true]
 var prevAudioStream : AudioStreamPlayer
 var paVA = [
-	\"res://sounds/pa/Clean/crash.mp3\",\"res://sounds/pa/Clean/cybertruck.mp3\",\"res://sounds/pa/Clean/enough_caffiene.mp3\",
-	\"res://sounds/pa/Clean/Fiesta.mp3\", \"res://sounds/pa/Clean/mark.mp3\", \"res://sounds/pa/Clean/maya_fanny.mp3\",
-	\"res://sounds/pa/Clean/sale.mp3\", \"res://sounds/pa/Clean/uhoh.mp3\", \"res://sounds/pa/Explicit/mikeCox.mp3\"
+\"res://sounds/pa/Clean/cleanup_on_pi.mp3\", \"res://sounds/pa/Clean/crash.mp3\", \"res://sounds/pa/Clean/cybertruck.mp3\",
+\"res://sounds/pa/Clean/enough_caffiene.mp3\", \"res://sounds/pa/Clean/Fiesta.mp3\", \"res://sounds/pa/Clean/flash_sale.mp3\",
+\"res://sounds/pa/Clean/ianpaulfreely.mp3\", \"res://sounds/pa/Clean/lost_item.mp3\", \"res://sounds/pa/Clean/mark.mp3\",
+\"res://sounds/pa/Clean/maya_fanny.mp3\", \"res://sounds/pa/Clean/sale.mp3\", \"res://sounds/pa/Clean/StoreClosing.mp3\",
+\"res://sounds/pa/Clean/uhoh.mp3\", \"res://sounds/pa/Clean/wham.mp3\"
 ]
 
 func _ready() -> void:
