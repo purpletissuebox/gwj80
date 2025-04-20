@@ -11,6 +11,7 @@ script/source = "extends Control
 
 var degPerTick := 1
 var playOnce = [true,true]
+var prevAudioStream : AudioStreamPlayer
 var paVA = [
 	\"res://sounds/pa/Clean/crash.mp3\",\"res://sounds/pa/Clean/cybertruck.mp3\",\"res://sounds/pa/Clean/enough_caffiene.mp3\",
 	\"res://sounds/pa/Clean/Fiesta.mp3\", \"res://sounds/pa/Clean/mark.mp3\", \"res://sounds/pa/Clean/maya_fanny.mp3\",
@@ -26,15 +27,17 @@ func _process(delta: float) -> void:
 
 	if timer.time_left < timer.wait_time/2 and playOnce[0]:
 		# TODO.hw stop current PA from playing and replace with this one
-		AudioDriver.play_sfx(\"res://sounds/pa/Clean/StoreClosing.mp3\", 1.0)
+		if prevAudioStream: AudioDriver.stop_audio(prevAudioStream, 0)
+		prevAudioStream = AudioDriver.play_sfx(\"res://sounds/pa/Clean/StoreClosing.mp3\", 1.0)
 		playOnce[0] = false
 	elif timer.time_left < timer.wait_time/4 and playOnce[1]:
-		AudioDriver.play_sfx(\"res://sounds/pa/Explicit/GETOUT_Doctored.mp3\", 1.0)
+		if prevAudioStream: AudioDriver.stop_audio(prevAudioStream, 0)
+		prevAudioStream = AudioDriver.play_sfx(\"res://sounds/pa/Explicit/GETOUT_Doctored.mp3\", 1.0)
 		playOnce[1] = false
 
 func _on_pa_timer_timeout() -> void:
 	var sound = paVA[randi()%paVA.size()]
-	AudioDriver.play_sfx(sound, 0.5)
+	prevAudioStream = AudioDriver.play_sfx(sound, 0.5)
 
 
 func _on_game_timer_timeout() -> void:
@@ -75,12 +78,12 @@ offset_bottom = 378.0
 texture = ExtResource("2_f4i75")
 
 [node name="GameTimer" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 180.0
 one_shot = true
 autostart = true
 
 [node name="PATimer" type="Timer" parent="."]
-wait_time = 25.0
+wait_time = 27.0
 autostart = true
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
