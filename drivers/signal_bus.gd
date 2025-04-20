@@ -13,3 +13,5 @@ enum foods {
 signal register_shelf(shelf)
 signal spawn_food(shelf, food)
 signal remove_food(foods)
+
+signal ui_show_food(camera)

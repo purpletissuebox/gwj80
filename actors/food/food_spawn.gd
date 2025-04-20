@@ -32,6 +32,7 @@ func show_food(shelf, food, food_type):
 		shown_food = food.instantiate()
 		shown_food_type = food_type
 		$FoodSpawn.add_child(shown_food)
+		SignalBus.ui_show_food.emit($FoodSpawn/Camera3D)
 		
 func pickup_food(area: Area3D):
 	if shown_food and area.get_parent() is ShoppingCart:
