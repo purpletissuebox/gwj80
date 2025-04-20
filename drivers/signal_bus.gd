@@ -2,6 +2,7 @@ extends Node
 
 signal change_lvl
 signal change_money(int)
+signal checkout
 
 enum foods {
 	beans,
@@ -17,3 +18,4 @@ signal remove_food(foods)
 signal ui_show_food(camera)
 
 signal game_over
+signal winner
