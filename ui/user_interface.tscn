@@ -1,7 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://8x44onkslefx"]
 
 [ext_resource type="Script" uid="uid://d1htuus8tbdp2" path="res://ui/show_food.gd" id="1_5skvp"]
-[ext_resource type="Texture2D" uid="uid://kg4kb5ek5tlg" path="res://ui/paper.png" id="2_ue2kl"]
 [ext_resource type="PackedScene" uid="uid://cma4bmnd1th37" path="res://ui/wallet.tscn" id="3_j1g8x"]
 [ext_resource type="PackedScene" uid="uid://br4bfrthtfuqo" path="res://ui/clock.tscn" id="3_wy7nh"]
 [ext_resource type="PackedScene" uid="uid://d1vwvccs1eef" path="res://actors/arrow/arrow.tscn" id="4_wy7nh"]
@@ -52,7 +51,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/LeftMenu/CurrentFoodContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(229, 169)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 script = ExtResource("1_5skvp")
 
@@ -73,7 +72,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/LeftMenu/ArrowContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(229, 128)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="Node3D" parent="HBoxContainer/LeftMenu/ArrowContainer/SubViewport" instance=ExtResource("4_wy7nh")]
