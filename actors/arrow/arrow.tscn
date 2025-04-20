@@ -16,23 +16,25 @@ radial_segments = 4
 size = Vector3(1, 1, 5)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="PIVOT" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -100, 0)
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="PIVOT"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.8855)
 environment = SubResource("Environment_ueay0")
 projection = 1
 size = 5.51228
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Node3D" type="Node3D" parent="PIVOT"]
 script = ExtResource("1_ueay0")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="PIVOT/Node3D"]
 transform = Transform3D(-0.707107, -8.74228e-08, -0.707107, 0.707107, -4.37114e-08, -0.707107, 3.09086e-08, -1, 9.27259e-08, 0, 0, -2.81826)
 mesh = SubResource("CylinderMesh_tiiny")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PIVOT/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.783179)
 mesh = SubResource("BoxMesh_ueay0")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")

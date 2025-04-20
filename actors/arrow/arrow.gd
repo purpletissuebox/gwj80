@@ -9,14 +9,13 @@ func _ready():
 
 func _process(_delta):
 	if player:
-		swivel()
+		swivel(self.target)
 
-func swivel():
-	var camera_pos:Vector3 = player.global_position
-	var loc:Vector3 = target - camera_pos + self.global_position
-	var camera_norm:Vector3 = -player.global_basis.z
-	var camera_basis:Basis = Basis.looking_at(camera_norm)
-	var dst = loc*camera_basis
+func swivel(tgt:Vector3):
+	var local_tgt:Vector3 = tgt - player.global_position + self.global_position
+	var camera_look_dir:Vector3 = -player.global_basis.z
+	var camera_coordinate_system:Basis = Basis.looking_at(camera_look_dir)
+	var dst = local_tgt*camera_coordinate_system
 	self.look_at(dst)
 
 func update_tgt(shelf, _food):
