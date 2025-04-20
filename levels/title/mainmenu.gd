@@ -6,7 +6,7 @@ func _ready():
 	vol_slider.value = AudioDriver.global_bgm_volume
 
 func start_game():
-	get_tree().change_scene_to_file("res://levels/Store/Store.tscn")
+	get_tree().change_scene_to_file("res://levels/Store/NewStore.tscn")
 
 func open_credits():
 	credits_screen.visible = true
