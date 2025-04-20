@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cqwknfxlwwegs" path="res://levels/Store/Aisle/Aisle6.tscn" id="6_p146l"]
 [ext_resource type="PackedScene" uid="uid://dhpxwae5gyehb" path="res://levels/Store/Aisle/Aisle7.tscn" id="7_phk8e"]
 [ext_resource type="PackedScene" uid="uid://rlhv8hud78ae" path="res://levels/Store/Aisle/Aisle8.tscn" id="8_1vsu7"]
-[ext_resource type="PackedScene" path="res://levels/Store/StoreModel.tscn" id="9_8ubj7"]
-[ext_resource type="PackedScene" uid="uid://dq4c3i7drdv6x" path="res://actors/player/player.tscn" id="10_c6ad6"]
+[ext_resource type="PackedScene" uid="uid://c1ff3o6utaqye" path="res://levels/Store/StoreModel.tscn" id="9_8ubj7"]
+[ext_resource type="PackedScene" uid="uid://duh3efbyiw3gp" path="res://actors/player/player.tscn" id="10_c6ad6"]
 [ext_resource type="PackedScene" uid="uid://8x44onkslefx" path="res://ui/user_interface.tscn" id="11_rq6px"]
 [ext_resource type="PackedScene" uid="uid://creasdc0bg2nm" path="res://actors/shoppers/shopper_spawner.tscn" id="12_p146l"]
 
@@ -52,10 +52,10 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108, 3
 [node name="Ailse8" parent="NavigationRegion3D" instance=ExtResource("8_1vsu7")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108, 3, 360)
 
+[node name="UserInterface" parent="." instance=ExtResource("11_rq6px")]
+
 [node name="Player" parent="." instance=ExtResource("10_c6ad6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0259, 0, 142.55)
-
-[node name="UserInterface" parent="." instance=ExtResource("11_rq6px")]
 
 [node name="Marker3DContainer" type="Node3D" parent="."]
 
