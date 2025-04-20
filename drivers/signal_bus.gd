@@ -11,6 +11,7 @@ enum foods {
 	mushroom,
 }
 signal register_shelf(shelf)
+signal register_player_cam
 signal spawn_food(shelf, food)
 signal remove_food(foods)
 
