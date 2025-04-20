@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://byu21rqani16k"]
+
+[sub_resource type="GDScript" id="GDScript_rhky5"]
+script/source = "extends Control
+
+func _ready() -> void:
+	SignalBus.game_over.connect(on_game_over)
+
+func _on_reset_button_pressed() -> void:
+		get_tree().change_scene_to_file(\"res://levels/Store/NewStore.tscn\")
+
+func on_game_over() -> void:
+	self.visible = true
+	var player = get_tree().root.find_child(\"Player\", true, false)
+	player.process_mode = Node.PROCESS_MODE_DISABLED
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhky5"]
+bg_color = Color(1, 1, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0, 0, 1)
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="SystemFont" id="SystemFont_m16wd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x1dv2"]
+font = SubResource("SystemFont_m16wd")
+font_size = 58
+font_color = Color(1, 0, 0.0980392, 1)
+
+[node name="GameOverMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = SubResource("GDScript_rhky5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(14.3981, 8.03247)
+color = Color(0, 0, 0, 0.458824)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.0
+offset_top = -60.0
+offset_right = 169.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhky5")
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_x1dv2")
+horizontal_alignment = 1
+
+[node name="ResetButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "RESET"
+
+[connection signal="pressed" from="VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
