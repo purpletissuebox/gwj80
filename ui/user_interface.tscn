@@ -1,14 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://8x44onkslefx"]
+[gd_scene load_steps=7 format=3 uid="uid://8x44onkslefx"]
 
 [ext_resource type="Script" path="res://ui/show_food.gd" id="1_5skvp"]
 [ext_resource type="PackedScene" uid="uid://dbidiia4q6sku" path="res://models/cone.glb" id="2_5skvp"]
-[ext_resource type="Texture2D" uid="uid://kg4kb5ek5tlg" path="res://ui/paper.png" id="2_ue2kl"]
 [ext_resource type="PackedScene" uid="uid://cma4bmnd1th37" path="res://ui/wallet.tscn" id="3_j1g8x"]
 [ext_resource type="PackedScene" uid="uid://br4bfrthtfuqo" path="res://ui/clock.tscn" id="3_wy7nh"]
+[ext_resource type="PackedScene" uid="uid://vl6p73ob84fl" path="res://ui/shopping_list/shopping_list.tscn" id="6_fvxh3"]
 [ext_resource type="PackedScene" uid="uid://byu21rqani16k" path="res://ui/game_over_menu.tscn" id="6_wy7nh"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_r3gyj"]
-font_color = Color(0, 0, 0, 1)
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -54,7 +51,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/LeftMenu/CurrentFoodContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(190, 169)
+size = Vector2i(229, 169)
 render_target_update_mode = 4
 script = ExtResource("1_5skvp")
 
@@ -75,7 +72,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/LeftMenu/ArrowContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(190, 128)
+size = Vector2i(229, 128)
 render_target_update_mode = 4
 
 [node name="cone" parent="HBoxContainer/LeftMenu/ArrowContainer/SubViewport" instance=ExtResource("2_5skvp")]
@@ -89,31 +86,24 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
 
-[node name="ShoppingList" type="MarginContainer" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_top = 200
-theme_override_constants/margin_bottom = 200
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/ShoppingList"]
-layout_mode = 2
-texture = ExtResource("2_ue2kl")
-expand_mode = 4
-stretch_mode = 1
-
-[node name="Label" type="Label" parent="HBoxContainer/ShoppingList"]
-layout_mode = 2
-size_flags_vertical = 1
-text = "Beans
-Beans
-Beans
-Chips
-Bread
-Eggs
-(This will be images)"
-label_settings = SubResource("LabelSettings_r3gyj")
-horizontal_alignment = 1
-
 [node name="GameOverMenu" parent="." instance=ExtResource("6_wy7nh")]
 visible = false
 layout_mode = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -88.0
+offset_right = -88.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+
+[node name="ShoppingList" parent="CenterContainer2" instance=ExtResource("6_fvxh3")]
+layout_mode = 2

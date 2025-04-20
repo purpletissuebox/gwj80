@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://x402jxnw6qd3"]
+
+[ext_resource type="PackedScene" uid="uid://boygbsvhrg0k7" path="res://models/BEANS.glb" id="1_a2th6"]
+
+[node name="BeansSubViewportContainer" type="SubViewportContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BeansSubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="BEANS" parent="BeansSubViewport" instance=ExtResource("1_a2th6")]
+transform = Transform3D(-0.425779, 0, 0.904827, 0, 1, 0, -0.904827, 0, -0.425779, -7.03095, 0, -7.75029)
+
+[node name="BeanCamera" type="Camera3D" parent="BeansSubViewport"]
+transform = Transform3D(-0.0131943, -0.525485, 0.8507, -2.99257e-09, 0.850774, 0.525531, -0.999913, 0.00693401, -0.0112254, -3.81194, 3.15667, -7.70294)

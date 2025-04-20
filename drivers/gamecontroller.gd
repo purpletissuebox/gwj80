@@ -23,6 +23,7 @@ func _ready():
 	SignalBus.register_shelf.connect(register_shelf)
 	SignalBus.remove_food.connect(_on_food_removed)
 	SignalBus.checkout.connect(on_checkout)
+	SignalBus.request_grocery_list.connect(send_groceries)
 	SignalBus.register_shelf.emit(-1)
 	grocery_total = randi_range(6,10)
 	_generate_grocery_list()
@@ -40,11 +41,13 @@ func select_food_spawn():
 func _on_food_removed(removed_food):
 	groceries_acquired += [removed_food]
 	grocery_list.remove_at(grocery_list.find(removed_food))
+	SignalBus.ui_update_grocery_list.emit(grocery_list)
 	select_food_spawn()
 
 func _generate_grocery_list():
 	for i in grocery_total:
 		grocery_list += [randi_range(SignalBus.foods.beans,SignalBus.foods.mushroom)]
+	SignalBus.ui_update_grocery_list.emit(grocery_list)
 
 func on_checkout():
 	if grocery_list.is_empty() and _check_money():
@@ -63,3 +66,6 @@ func _check_money():
 	else:
 		AudioDriver.play_sfx("res://sounds/pa/Clean/mf_pay_for_that.mp3")
 		return false
+
+func send_groceries():
+	SignalBus.ui_update_grocery_list.emit(grocery_list)
