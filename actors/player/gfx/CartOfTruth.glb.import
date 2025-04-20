@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dyahhqqdja86j"
-path="res://.godot/imported/CartOfTruth.glb-974be60fb1f173b7058f1ded78b10608.scn"
+path="res://.godot/imported/CartOfTruth.glb-c683bee6e900386f949dc88726932e78.scn"
 
 [deps]
 
-source_file="res://models/CartOfTruth.glb"
-dest_files=["res://.godot/imported/CartOfTruth.glb-974be60fb1f173b7058f1ded78b10608.scn"]
+source_file="res://actors/player/gfx/CartOfTruth.glb"
+dest_files=["res://.godot/imported/CartOfTruth.glb-c683bee6e900386f949dc88726932e78.scn"]
 
 [params]
 
