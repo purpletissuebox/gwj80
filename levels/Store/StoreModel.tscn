@@ -2,64 +2,75 @@
 
 [ext_resource type="PackedScene" uid="uid://bvilmhlo2ho16" path="res://models/2doorsdown.glb" id="1_4yxlt"]
 [ext_resource type="PackedScene" uid="uid://bvt1t5u0nlxws" path="res://models/backrooms.glb" id="1_x5q0i"]
+[ext_resource type="PackedScene" uid="uid://cfmq00p8x12ni" path="res://levels/Store/Wall.tscn" id="2_4j46s"]
 
 [node name="StoreModel" type="Node3D"]
 
 [node name="2doorsdown" parent="." instance=ExtResource("1_4yxlt")]
-transform = Transform3D(-1.31134e-07, 0, -2.8, 0, 1.8, 0, 3, 0, -1.22392e-07, -13.224, 12.7133, -70.3284)
+transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, -17.0453, 5.17615, -70.3157)
+
+[node name="2doorsdown2" parent="." instance=ExtResource("1_4yxlt")]
+transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, -2.91677, 5.17615, -70.3157)
+
+[node name="2doorsdown3" parent="." instance=ExtResource("1_4yxlt")]
+transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, 11.1685, 5.17615, -70.3157)
+
+[node name="Wall" parent="." instance=ExtResource("2_4j46s")]
+transform = Transform3D(1.71962e-14, 3.93403e-07, 9, 9, -3.93403e-07, 0, 3.93403e-07, 9, -3.93403e-07, 0.172707, 2.84424, -70.5274)
 
 [node name="backrooms" parent="." instance=ExtResource("1_x5q0i")]
+transform = Transform3D(1, 0, 0, 0, 0.4, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="backrooms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.5598, 33, 37.414)
-light_color = Color(1, 0.984314, 0.513726, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.5598, 27.6476, 37.414)
+light_color = Color(0.973632, 0.965712, 0.840443, 1)
 light_energy = 16.0
 omni_range = 4096.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="backrooms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33, 37.508)
-light_color = Color(1, 0.984314, 0.513726, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27.6476, 37.508)
+light_color = Color(0.973632, 0.965712, 0.840443, 1)
 light_energy = 16.0
 omni_range = 4096.0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="backrooms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.8361, 33, 0)
-light_color = Color(1, 0.984314, 0.513726, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.8361, 27.6476, 0)
+light_color = Color(0.973632, 0.965712, 0.840443, 1)
 light_energy = 16.0
 omni_range = 4096.0
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="backrooms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.3647, 33, 0)
-light_color = Color(1, 0.984314, 0.513726, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.3647, 27.6476, 0)
+light_color = Color(0.973632, 0.965712, 0.840443, 1)
 light_energy = 16.0
 omni_range = 4096.0
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="backrooms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33, 0)
-light_color = Color(1, 0.984314, 0.513726, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27.6476, 0)
+light_color = Color(0.973632, 0.965712, 0.840443, 1)
 light_energy = 16.0
 omni_range = 50.0
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="backrooms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.8479, 33, 36.2404)
-light_color = Color(1, 0.984314, 0.513726, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.8479, 27.6476, 36.2404)
+light_color = Color(0.973632, 0.965712, 0.840443, 1)
 light_energy = 16.0
 omni_range = 4096.0
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="backrooms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.2584, 33, -43.8342)
-light_color = Color(1, 0.984314, 0.513726, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.2584, 27.6476, -43.8342)
+light_color = Color(0.973632, 0.965712, 0.840443, 1)
 light_energy = 16.0
 omni_range = 4096.0
 
 [node name="OmniLight3D8" type="OmniLight3D" parent="backrooms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33, -40.1504)
-light_color = Color(1, 0.984314, 0.513726, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27.6476, -40.1504)
+light_color = Color(0.973632, 0.965712, 0.840443, 1)
 light_energy = 16.0
 omni_range = 4096.0
 
 [node name="OmniLight3D9" type="OmniLight3D" parent="backrooms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.8019, 33, -39.578)
-light_color = Color(1, 0.984314, 0.513726, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.8019, 27.6476, -39.578)
+light_color = Color(0.973632, 0.965712, 0.840443, 1)
 light_energy = 16.0
 omni_range = 4096.0

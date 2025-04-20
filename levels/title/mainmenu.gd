@@ -6,7 +6,8 @@ func _ready():
 	vol_slider.value = AudioDriver.global_bgm_volume
 
 func start_game():
-	get_tree().change_scene_to_file("res://levels/Store/Store.tscn")
+	AudioDriver.play_bgm("res://sounds/the-ghost-of-shepardx27s-pie-glbml-112816-PA.ogg", 0.15)
+	get_tree().change_scene_to_file("res://levels/Store/NewStore.tscn")
 
 func open_credits():
 	credits_screen.visible = true
