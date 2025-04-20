@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://cy15gr5wa02xl"]
+
+[ext_resource type="Script" uid="uid://do2qovjiw2722" path="res://actors/player/gfx/cart.gd" id="1_y2pm0"]
+[ext_resource type="PackedScene" uid="uid://dyahhqqdja86j" path="res://actors/player/gfx/CartOfTruth.glb" id="2_ybogb"]
+[ext_resource type="Script" uid="uid://mvwcp2ttamv5" path="res://actors/player/gfx/sparks.gd" id="3_guhge"]
+[ext_resource type="Texture2D" uid="uid://dtfd5bukc6ql3" path="res://actors/player/gfx/spark.png" id="3_ybogb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_guhge"]
+size = Vector3(1, 1, 3)
+
+[sub_resource type="Curve" id="Curve_k7dg4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_toaoj"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_hayyi"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_n4cqx"]
+curve_x = SubResource("Curve_k7dg4")
+curve_y = SubResource("Curve_toaoj")
+curve_z = SubResource("Curve_hayyi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gy5r1"]
+particle_flag_align_y = true
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 15.0
+gravity = Vector3(0, -30, 0)
+scale_min = 0.15
+scale_max = 0.5
+scale_curve = SubResource("CurveXYZTexture_n4cqx")
+color = Color(1, 0.819608, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ne7tj"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_ybogb")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kgby7"]
+material = SubResource("StandardMaterial3D_ne7tj")
+
+[node name="Cart" type="Node3D"]
+script = ExtResource("1_y2pm0")
+
+[node name="CartOfTruth" parent="." instance=ExtResource("2_ybogb")]
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.40963, -1)
+collision_layer = 0
+script = ExtResource("3_guhge")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_guhge")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Area3D"]
+emitting = false
+amount = 16
+lifetime = 0.33
+process_material = SubResource("ParticleProcessMaterial_gy5r1")
+draw_pass_1 = SubResource("QuadMesh_kgby7")
+
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.40963, -1)
+collision_layer = 0
+script = ExtResource("3_guhge")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+shape = SubResource("BoxShape3D_guhge")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Area3D2"]
+emitting = false
+amount = 16
+lifetime = 0.33
+process_material = SubResource("ParticleProcessMaterial_gy5r1")
+draw_pass_1 = SubResource("QuadMesh_kgby7")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="sparks_on"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="sparks_off"]
+[connection signal="body_entered" from="Area3D2" to="Area3D2" method="sparks_on"]
+[connection signal="body_exited" from="Area3D2" to="Area3D2" method="sparks_off"]
