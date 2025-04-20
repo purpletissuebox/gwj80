@@ -18,7 +18,7 @@ func swivel(tgt:Vector3):
 	var dst = local_tgt*camera_coordinate_system
 	self.look_at(dst)
 
-func update_tgt(shelf, _food):
+func update_tgt(shelf, _food, _int):
 	self.target = shelf.global_position
 
 func get_camera(c):
