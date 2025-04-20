@@ -40,7 +40,6 @@ center_of_mass = Vector3(0, -1, 0)
 linear_damp_mode = 1
 angular_damp_mode = 1
 script = ExtResource("1_oul6g")
-spring_strength = 30.0
 engine_curve = SubResource("Curve_rkbax")
 steer_curve = SubResource("Curve_qjkh3")
 wheels = [NodePath("Wheels/RayCast3D"), NodePath("Wheels/RayCast3D2"), NodePath("Wheels/RayCast3D3"), NodePath("Wheels/RayCast3D4")]

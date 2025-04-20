@@ -1,6 +1,6 @@
 class_name ShoppingCart extends RigidBody3D
 
-@export var spring_strength:float = 22
+@export var spring_strength:float = 30
 @export var damping:float = 1
 @export var engine_curve:Curve
 @export var steer_curve:Curve
