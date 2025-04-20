@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://8x44onkslefx"]
 
-[ext_resource type="PackedScene" uid="uid://cuc036eoyjppo" path="res://models/bapple.glb" id="1_r3gyj"]
+[ext_resource type="Script" uid="uid://d1htuus8tbdp2" path="res://ui/show_food.gd" id="1_5skvp"]
 [ext_resource type="PackedScene" uid="uid://dbidiia4q6sku" path="res://models/cone.glb" id="2_5skvp"]
 [ext_resource type="Texture2D" uid="uid://kg4kb5ek5tlg" path="res://ui/paper.png" id="2_ue2kl"]
 [ext_resource type="PackedScene" uid="uid://cma4bmnd1th37" path="res://ui/wallet.tscn" id="3_j1g8x"]
@@ -51,11 +51,7 @@ transparent_bg = true
 handle_input_locally = false
 size = Vector2i(190, 148)
 render_target_update_mode = 4
-
-[node name="bapple" parent="HBoxContainer/LeftMenu/CurrentFoodContainer/SubViewport" instance=ExtResource("1_r3gyj")]
-
-[node name="Camera3D" type="Camera3D" parent="HBoxContainer/LeftMenu/CurrentFoodContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 0.9872, 0.159485, 0, -0.159485, 0.9872, 0, 0.395623, 2.24566)
+script = ExtResource("1_5skvp")
 
 [node name="Wallet" parent="HBoxContainer/LeftMenu" instance=ExtResource("3_j1g8x")]
 layout_mode = 2
