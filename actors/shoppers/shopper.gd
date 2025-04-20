@@ -12,6 +12,19 @@ enum ShopperPhenotype {BREWBOY,BUSSNESSMAN,GRANNY,KAREN}
 const avatars := [preload("res://sprites/brewboy.png"), preload("res://sprites/bussnessman.png"),
 				  preload("res://sprites/grannynanny.png"), preload("res://sprites/Karen.png")]
 
+var sounds = [
+"res://sounds/hit_sounds/ahh.mp3",
+"res://sounds/hit_sounds/grandma_rude.mp3",
+"res://sounds/hit_sounds/lawyer.mp3",
+"res://sounds/hit_sounds/mid_ow.mp3",
+"res://sounds/hit_sounds/myleg.mp3",
+"res://sounds/hit_sounds/oof.mp3",
+"res://sounds/hit_sounds/ouch.mp3",
+"res://sounds/hit_sounds/ow.mp3",
+"res://sounds/hit_sounds/uncivie.mp3",
+"res://sounds/hit_sounds/waaah.mp3"
+]
+
 signal releasedFromMortalCoil
 
 var collision_force = 5
@@ -48,6 +61,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		money_emitter.emitting = true
 		sprite_3d.billboard = BaseMaterial3D.BILLBOARD_DISABLED
 		AudioDriver.play_sfx("res://sounds/sound_effects/kaching.ogg", 2.0)
+		AudioDriver.play_sfx(sounds[randi_range(0,9)], 2.0)
 		releasedFromMortalCoil.emit()
 		SignalBus.change_money.emit(monetaryValueOfLife)
 		
