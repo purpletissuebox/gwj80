@@ -1,18 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://drvh1cekyb8x1"]
+[gd_scene load_steps=6 format=3 uid="uid://drvh1cekyb8x1"]
 
 [ext_resource type="Script" uid="uid://cx073lyooo8lo" path="res://models/arrow.gd" id="1_24004"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_rc8ik"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24004"]
+albedo_color = Color(1, 0, 0.0509804, 1)
+
 [sub_resource type="PrismMesh" id="PrismMesh_cej1g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvuoe"]
+albedo_color = Color(1, 0, 0.0509804, 1)
 
 [node name="NewArrow" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.0374, 0, 0, 0, -4.37114e-08, 3.5207, 0, -1, -1.53895e-07, 0, 0, 0)
 mesh = SubResource("BoxMesh_rc8ik")
+surface_material_override/0 = SubResource("StandardMaterial3D_24004")
 script = ExtResource("1_24004")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
 transform = Transform3D(0.0485427, -0.0537673, -0.956698, 3.59967, -7.12098e-05, 0.0129374, -0.00268725, -1.06665, 0.0482242, -0.0334604, -0.00151503, -0.975)
 mesh = SubResource("PrismMesh_cej1g")
+surface_material_override/0 = SubResource("StandardMaterial3D_rvuoe")
