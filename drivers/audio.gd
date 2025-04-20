@@ -17,7 +17,7 @@ func play_sfx(filepath:String, volume:float = 1.0):
 	player.finished.connect(self.stop_audio.bind(player, 0, true))
 	
 	self.add_child(player)
-	return play_audio(filepath, player, volume, 0)
+	return play_audio(filepath, player, volume*global_sfx_volume, 0)
 
 func play_audio(filepath:String, player:AudioStreamPlayer, volume:float, fade_len:float):
 	var t = create_tween()

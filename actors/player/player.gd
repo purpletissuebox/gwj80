@@ -30,7 +30,7 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	var ratio = abs(self.global_basis.x.dot(self.linear_velocity)/self.top_speed)
 	if engine_sound:
-		engine_sound.volume_linear = ratio
+		engine_sound.volume_linear = (ratio * 0.65 * AudioDriver.global_sfx_volume)
 		if ratio <= 0.3:
 			engine_sound.stop()
 			engine_sound = null

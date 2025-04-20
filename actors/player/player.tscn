@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bsa3o7udfhus5" path="res://actors/player/player.gd" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://chcd5s5f8b16b" path="res://actors/player/movement/engine.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://bwf3jgvht70ru" path="res://actors/player/movement/steering.gd" id="4_yw30f"]
-[ext_resource type="Script" uid="uid://cpor8wrqsu60t" path="res://actors/player/camera.gd" id="5_6p1w3"]
+[ext_resource type="Script" path="res://actors/player/camera.gd" id="5_6p1w3"]
 [ext_resource type="PackedScene" uid="uid://ddnrqolceud28" path="res://actors/player/movement/wheel.tscn" id="5_15y17"]
 [ext_resource type="PackedScene" uid="uid://cy15gr5wa02xl" path="res://actors/player/gfx/cart.tscn" id="6_15y17"]
 

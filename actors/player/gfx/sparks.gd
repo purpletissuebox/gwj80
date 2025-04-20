@@ -14,7 +14,7 @@ const scrape_sounds:Array[String] = [
 func sparks_on(_body):
 	if num_bodies == 0:
 		gpu_particles_3d.emitting = true
-		scrape = AudioDriver.play_sfx(self.scrape_sounds.pick_random())
+		scrape = AudioDriver.play_sfx(self.scrape_sounds.pick_random(), 0.65)
 	num_bodies += 1
 	
 func sparks_off(_body):
