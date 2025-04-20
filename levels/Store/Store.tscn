@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cqwknfxlwwegs" path="res://levels/Store/Aisle/Aisle6.tscn" id="11_cfupx"]
 [ext_resource type="PackedScene" uid="uid://dhpxwae5gyehb" path="res://levels/Store/Aisle/Aisle7.tscn" id="12_cfupx"]
 [ext_resource type="PackedScene" uid="uid://rlhv8hud78ae" path="res://levels/Store/Aisle/Aisle8.tscn" id="13_lothm"]
-[ext_resource type="PackedScene" uid="uid://dq4c3i7drdv6x" path="res://actors/player/player.tscn" id="14_npkuy"]
+[ext_resource type="PackedScene" uid="uid://duh3efbyiw3gp" path="res://actors/player/player.tscn" id="14_npkuy"]
 [ext_resource type="PackedScene" uid="uid://yg3y8bgn8phm" path="res://levels/Store/Ceiling.tscn" id="15_vkcuq"]
 [ext_resource type="PackedScene" uid="uid://8x44onkslefx" path="res://ui/user_interface.tscn" id="16_7bl71"]
 [ext_resource type="PackedScene" path="res://actors/shoppers/shopper_spawner.tscn" id="17_asjqk"]

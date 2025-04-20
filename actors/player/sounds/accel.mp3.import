@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/accel.mp3-e521d71a70a4b5e9cae81570089c8405.mp
 
 [params]
 
-loop=false
-loop_offset=0
+loop=true
+loop_offset=2.401
 bpm=0
 beat_count=0
 bar_beats=4
