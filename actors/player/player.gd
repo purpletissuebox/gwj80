@@ -22,7 +22,7 @@ var drift_sound:AudioStreamPlayer = null
 var sound_cooldown:float = 0.0
 
 func _ready():
-	AudioDriver.play_bgm("res://levels/test_shop/bgm.mp3", 0)
+	AudioDriver.play_bgm("res://sounds/the-ghost-of-shepardx27s-pie-glbml-112816-PA.ogg", 0, 0.20)
 
 func _physics_process(delta):
 	if self.sound_cooldown > 0:
