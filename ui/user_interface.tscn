@@ -2,20 +2,9 @@
 
 [ext_resource type="Script" uid="uid://d1htuus8tbdp2" path="res://ui/show_food.gd" id="1_5skvp"]
 [ext_resource type="PackedScene" uid="uid://dbidiia4q6sku" path="res://models/cone.glb" id="2_5skvp"]
-[ext_resource type="Script" uid="uid://bstokiu8in2rk" path="res://ui/click_down.gd" id="2_j1g8x"]
 [ext_resource type="Texture2D" uid="uid://kg4kb5ek5tlg" path="res://ui/paper.png" id="2_ue2kl"]
-
-[sub_resource type="GDScript" id="GDScript_5skvp"]
-resource_name = "wallet"
-script/source = "extends Label
-var total_money = 0
-func _ready() -> void:
-	SignalBus.change_money.connect(display_money)
-	
-func display_money(amount:int):
-	total_money += amount
-	text = \"$\"+str(total_money)
-"
+[ext_resource type="PackedScene" uid="uid://cma4bmnd1th37" path="res://ui/wallet.tscn" id="3_j1g8x"]
+[ext_resource type="PackedScene" uid="uid://br4bfrthtfuqo" path="res://ui/clock.tscn" id="3_wy7nh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r3gyj"]
 font_color = Color(0, 0, 0, 1)
@@ -27,6 +16,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+offset_left = 995.0
+offset_top = -82.0
+offset_right = 995.0
+offset_bottom = 566.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Clock" parent="CenterContainer" instance=ExtResource("3_wy7nh")]
+layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -49,22 +49,12 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/LeftMenu/CurrentFoodContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(190, 148)
 render_target_update_mode = 4
 script = ExtResource("1_5skvp")
 
-[node name="RemainingTime" type="ProgressBar" parent="HBoxContainer/LeftMenu"]
+[node name="Wallet" parent="HBoxContainer/LeftMenu" instance=ExtResource("3_j1g8x")]
 layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
-value = 100.0
-show_percentage = false
-script = ExtResource("2_j1g8x")
-
-[node name="Label" type="Label" parent="HBoxContainer/LeftMenu"]
-layout_mode = 2
-text = "0"
-script = SubResource("GDScript_5skvp")
 
 [node name="MoneyContainer2" type="HFlowContainer" parent="HBoxContainer/LeftMenu"]
 layout_mode = 2
@@ -93,7 +83,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/LeftMenu/ArrowContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(190, 112)
 render_target_update_mode = 4
 
 [node name="cone" parent="HBoxContainer/LeftMenu/ArrowContainer/SubViewport" instance=ExtResource("2_5skvp")]

@@ -15,3 +15,5 @@ signal spawn_food(shelf, food)
 signal remove_food(foods)
 
 signal ui_show_food(camera)
+
+signal game_over
