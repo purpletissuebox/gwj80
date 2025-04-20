@@ -8,13 +8,13 @@ var spawns:Array[Marker3D] = []
 var chosen_spawn:Marker3D = null
 
 # Uncomment for Spawn Testing
-#var foods = [
-	#preload("res://models/BEANS.glb"),
-	#preload("res://models/bapple.glb"),
-	#preload("res://models/bread.glb"),
-	#preload("res://models/broccoli.glb"),
-	#preload("res://models/mushyfriend.glb"),
-#]
+var foods = [
+	preload("res://models/BEANS.glb"),
+	preload("res://models/bapple.glb"),
+	preload("res://models/bread.glb"),
+	preload("res://models/broccoli.glb"),
+	preload("res://models/mushyfriend.glb"),
+]
 
 func _ready():
 	SignalBus.register_shelf.connect(register_shelf)
@@ -26,8 +26,8 @@ func _ready():
 			node.get_child(1).connect("area_entered", pickup_food)
 	
 	# Uncomment for Spawn Testing
-	#SignalBus.spawn_food.emit(self, foods[0], 0)
-	#await get_tree().create_timer(2.0).timeout
+	SignalBus.spawn_food.emit(self, foods[0], 0)
+	await get_tree().create_timer(2.0).timeout
 	
 func register_shelf(i):
 	if i is not Object:
@@ -39,6 +39,11 @@ func show_food(shelf, food, food_type):
 		shown_food_type = food_type
 		chosen_spawn = spawns.pick_random()
 		chosen_spawn.add_child(shown_food)
+		var food_model = chosen_spawn.get_child(1)
+		var arrow = load("res://models/Arrow.tscn")
+		arrow = arrow.instantiate()
+		arrow.global_position.y = 18
+		food_model.add_child(arrow)
 		SignalBus.ui_show_food.emit(chosen_spawn.get_child(0))
 		
 func pickup_food(area: Area3D):
