@@ -2,7 +2,7 @@ extends Node3D
 
 @export var car:ShoppingCart
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	self.rotation.x = 0
 	self.rotation.y = -PI/2
 	

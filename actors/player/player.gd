@@ -20,10 +20,6 @@ func _ready():
 		acc += self.engine_curve.sample(i/100.0)
 	self.engine_power = (top_speed/zero_to_sixty)/(acc/100)
 
-func _physics_process(delta: float) -> void:
-	pass
-	#print(self.linear_velocity)
-
 func apply_force_relative(force:Vector3, lcl_pos:Vector3):
 	var myrotation:Transform3D = self.global_transform
 	var end_position:Vector3 = myrotation*lcl_pos

@@ -9,7 +9,7 @@ func _ready() -> void:
 	self.length = self.target_position.length()
 	self.add_exception(car)
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if self.is_colliding():
 		car.apply_force_relative(spring_force(), self.position + car.center_of_mass)
 

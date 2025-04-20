@@ -7,7 +7,7 @@ var num_wheels:int
 func _ready():
 	self.num_wheels = car.wheels.size()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var fwd_vel:float = car.global_basis.x.dot(car.linear_velocity)
 	var input = Input.get_axis("ui_down", "ui_up")
 	
