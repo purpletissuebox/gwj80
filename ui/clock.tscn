@@ -17,7 +17,7 @@ var paVA = [
 \"res://sounds/pa/Clean/enough_caffiene.mp3\", \"res://sounds/pa/Clean/Fiesta.mp3\", \"res://sounds/pa/Clean/flash_sale.mp3\",
 \"res://sounds/pa/Clean/ianpaulfreely.mp3\", \"res://sounds/pa/Clean/lost_item.mp3\", \"res://sounds/pa/Clean/mark.mp3\",
 \"res://sounds/pa/Clean/maya_fanny.mp3\", \"res://sounds/pa/Clean/sale.mp3\", \"res://sounds/pa/Clean/StoreClosing.mp3\",
-\"res://sounds/pa/Clean/uhoh.mp3\", \"res://sounds/pa/Clean/wham.mp3\"
+\"res://sounds/pa/Clean/uhoh.mp3\", \"res://sounds/pa/Clean/wham.mp3\", \"res://sounds/pa/Explicit/mikeCox.mp3\"
 ]
 
 func _ready() -> void:
@@ -30,11 +30,11 @@ func _process(delta: float) -> void:
 	if timer.time_left < timer.wait_time/2 and playOnce[0]:
 		# TODO.hw stop current PA from playing and replace with this one
 		if prevAudioStream: AudioDriver.stop_audio(prevAudioStream, 0)
-		prevAudioStream = AudioDriver.play_sfx(\"res://sounds/pa/Clean/StoreClosing.mp3\", 1.0)
+		prevAudioStream = AudioDriver.play_sfx(\"res://sounds/pa/Clean/StoreClosing2min.mp3\", 1.0)
 		playOnce[0] = false
 	elif timer.time_left < timer.wait_time/4 and playOnce[1]:
 		if prevAudioStream: AudioDriver.stop_audio(prevAudioStream, 0)
-		prevAudioStream = AudioDriver.play_sfx(\"res://sounds/pa/Explicit/GETOUT_Doctored.mp3\", 1.0)
+		prevAudioStream = AudioDriver.play_sfx(\"res://sounds/pa/Clean/StoreClosing30s.mp3\", 1.0)
 		playOnce[1] = false
 
 func _on_pa_timer_timeout() -> void:
