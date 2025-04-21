@@ -1,7 +1,7 @@
 extends Control
 
 @export var bill_scale = Vector2(0.25, 0.25)
-var total_money = 0
+var total_money = SignalBus.current_money
 var denominations = [10000, 5000, 1000, 500, 100, 50, 20, 10, 5, 2, 1]
 var tender = {
 	10000:preload("res://sprites/money/10000USD.jpg"), 5000:preload("res://sprites/money/5000USD.jpg"),
@@ -13,6 +13,7 @@ var tender = {
 
 func _ready() -> void:
 	SignalBus.change_money.connect(display_money)
+	display_money(0)
 	
 func display_money(amount:int):
 	total_money += amount
