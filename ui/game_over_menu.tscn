@@ -10,18 +10,19 @@ func _ready() -> void:
 func _on_reset_button_pressed() -> void:
 		get_tree().change_scene_to_file(\"res://levels/Store/NewStore.tscn\")
 
-func on_winner(day, points):
+func on_winner():
 	self.visible = true
 	%WinnerLabel.visible = true
-	%WinnerLabel.text = \"Day \" + str(day) + \" complete.\\nYou earned \" + str(points) + \" points.\"
+	%WinnerLabel.text = \"Day \" + str(SignalBus.current_day) + \" complete.\\nYou earned \" + str(SignalBus.total_points) + \" points.\"
 	$VBoxContainer/ResetButton.text = \"Next Day\"
 	var player = get_tree().root.find_child(\"Player\", true, false)
+	#player.queue_free()
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 	
-func on_game_over(points) -> void:
+func on_game_over() -> void:
 	self.visible = true
 	%GameOverLabel.visible = true
-	%GameOverLabel.text = \"You ran out of time!\\nFinal Score: \" + str(points)
+	%GameOverLabel.text = \"You ran out of time!\\nFinal Score: \" + str(SignalBus.total_points)
 	$VBoxContainer/ResetButton.text = \"Restart\"
 	var player = get_tree().root.find_child(\"Player\", true, false)
 	player.process_mode = Node.PROCESS_MODE_DISABLED
@@ -115,6 +116,7 @@ label_settings = SubResource("LabelSettings_rhky5")
 horizontal_alignment = 1
 
 [node name="ResetButton" type="Button" parent="VBoxContainer"]
+process_mode = 2
 layout_mode = 2
 text = "RESET"
 

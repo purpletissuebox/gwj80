@@ -15,21 +15,23 @@ var grocery_prices = {
 	SignalBus.foods.broccoli:34,
 	SignalBus.foods.mushroom:17,
 }
+
 var grocery_list = []
 var groceries_acquired = []
-var total_grocery_cost: int
 var grocery_total : int
 
-var current_day = 0
-
 func _ready():
+	for child in self.get_tree().root.get_children():
+		if child is Shopper:
+			child.queue_free()
+			
 	SignalBus.register_shelf.connect(register_shelf)
 	SignalBus.remove_food.connect(_on_food_removed)
 	SignalBus.checkout.connect(on_checkout)
 	SignalBus.request_grocery_list.connect(send_groceries)
 	SignalBus.register_shelf.emit(-1)
-	current_day += 1
-	grocery_total = current_day#*4
+	SignalBus.current_day += 1
+	grocery_total = SignalBus.current_day*4
 	_generate_grocery_list()
 	select_food_spawn()
 
@@ -56,7 +58,7 @@ func _generate_grocery_list():
 
 func on_checkout():
 	if grocery_list.is_empty() and _check_money():
-		SignalBus.winner.emit(current_day, total_grocery_cost)
+		SignalBus.winner.emit()
 		
 func _check_money():
 	print("to enter new vegas you must submit to a credit check")
@@ -66,9 +68,9 @@ func _check_money():
 		total_needed += grocery_prices[grocery]
 	if total_needed <= wallet.total_money:
 		wallet.total_money -= total_needed
-		total_grocery_cost += total_needed
+		SignalBus.total_points += wallet.total_money + total_needed
 		SignalBus.change_money.emit(0)
-		AudioDriver.play_sfx("res://sounds/sound_effects/kaching.ogg", 2)
+		AudioDriver.play_sfx("res://sounds/sound_effects/kaching.ogg")
 		return true
 	else:
 		AudioDriver.play_sfx("res://sounds/pa/Clean/mf_pay_for_that.mp3")

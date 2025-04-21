@@ -21,3 +21,7 @@ signal ui_update_grocery_list(list)
 signal request_grocery_list
 signal game_over
 signal winner(day, points)
+
+
+var current_day:int
+var total_points:int
