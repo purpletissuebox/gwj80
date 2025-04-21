@@ -8,13 +8,16 @@ func _ready() -> void:
 	SignalBus.winner.connect(on_winner)
 	
 func _on_reset_button_pressed() -> void:
-		get_tree().paused = false
-		get_tree().change_scene_to_file(\"res://levels/Store/NewStore.tscn\")
+	get_tree().paused = false
+	get_tree().change_scene_to_file(\"res://levels/Store/NewStore.tscn\")
+
+func _on_exit_button_pressed() -> void:
+	get_tree().quit()
 
 func on_winner():
 	self.visible = true
 	%WinnerLabel.visible = true
-	%WinnerLabel.text = \"Day \" + str(SignalBus.current_day) + \" complete.\\nYou earned \" + str(SignalBus.total_points) + \" points.\"
+	%WinnerLabel.text = \"Day \" + str(SignalBus.current_day) + \" complete.\\nTotal Points: \" + str(SignalBus.total_points)
 	$VBoxContainer/ResetButton.text = \"Next Day\"
 	var player = get_tree().root.find_child(\"Player\", true, false)
 	player.queue_free()
@@ -124,4 +127,10 @@ process_mode = 3
 layout_mode = 2
 text = "RESET"
 
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+text = "Exit Game"
+
 [connection signal="pressed" from="VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
