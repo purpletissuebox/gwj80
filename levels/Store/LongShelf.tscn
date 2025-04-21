@@ -23,13 +23,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0301743, 6.73334, -0.343117
 shape = SubResource("BoxShape3D_jeoba")
 
 [node name="FoodSpawn" parent="." instance=ExtResource("3_m5bh2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35713, 11.8909, -19.3796)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.31127, 11.8909, -18.6401)
 
 [node name="FoodSpawn2" parent="." instance=ExtResource("3_m5bh2")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.43054, -0.743437, 17.1365)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6.43553, 4.24105, 17.1365)
 
 [node name="FoodSpawn3" parent="." instance=ExtResource("3_m5bh2")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.48059, 7.66582, -18.6568)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6.55538, 7.66582, -18.0259)
 
 [node name="FoodSpawn4" parent="." instance=ExtResource("3_m5bh2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54415, 2.98823, 7.71955)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.94437, 2.98823, 8.5254)

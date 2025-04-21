@@ -21,7 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29071, 10.5615, -0.657147)
 shape = SubResource("BoxShape3D_puvkc")
 
 [node name="FoodSpawn" parent="." instance=ExtResource("2_l87n6")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.42263, 10.7681, -7.27253)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6.92374, 10.7681, -4.13161)
 
 [node name="FoodSpawn2" parent="." instance=ExtResource("2_l87n6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.97245, 15.6734, -5.70692)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9827, 15.6734, -1.10503)

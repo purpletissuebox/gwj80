@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dyjhx6po6mvhs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j4krp"]
-size = Vector3(2.87592, 34.7841, 14.4384)
+size = Vector3(3.92624, 34.7841, 15.8569)
 
 [node name="FoodSpawn" type="Marker3D"]
 gizmo_extents = 1.0
@@ -14,5 +14,5 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06308, -8.44744, 0.662017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58824, -8.44744, 0.522134)
 shape = SubResource("BoxShape3D_j4krp")
