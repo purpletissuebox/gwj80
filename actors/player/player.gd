@@ -27,6 +27,9 @@ func _ready():
 		acc += self.engine_curve.sample(i/100.0)
 	self.engine_power = (top_speed/zero_to_sixty)/(acc/100)
 
+func _exit_tree() -> void:
+	engine_sound.stop()
+
 func _physics_process(delta: float) -> void:
 	var ratio = abs(self.global_basis.x.dot(self.linear_velocity)/self.top_speed)
 	if engine_sound:

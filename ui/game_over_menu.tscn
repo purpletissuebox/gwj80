@@ -16,8 +16,8 @@ func on_winner():
 	%WinnerLabel.text = \"Day \" + str(SignalBus.current_day) + \" complete.\\nYou earned \" + str(SignalBus.total_points) + \" points.\"
 	$VBoxContainer/ResetButton.text = \"Next Day\"
 	var player = get_tree().root.find_child(\"Player\", true, false)
-	#player.queue_free()
-	player.process_mode = Node.PROCESS_MODE_DISABLED
+	player.queue_free()
+	#player.process_mode = Node.PROCESS_MODE_DISABLED
 	
 func on_game_over() -> void:
 	self.visible = true
@@ -116,7 +116,6 @@ label_settings = SubResource("LabelSettings_rhky5")
 horizontal_alignment = 1
 
 [node name="ResetButton" type="Button" parent="VBoxContainer"]
-process_mode = 2
 layout_mode = 2
 text = "RESET"
 
