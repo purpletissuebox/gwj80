@@ -25,3 +25,4 @@ signal winner(day, points)
 
 var current_day:int
 var total_points:int
+var current_money: int

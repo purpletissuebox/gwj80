@@ -46,7 +46,8 @@ func select_food_spawn():
 		SignalBus.spawn_food.emit(target, foods[chosen_food], chosen_food)
 
 func _on_food_removed(removed_food):
-	groceries_acquired += [removed_food]
+	if removed_food in SignalBus.foods:
+		groceries_acquired += [removed_food]
 	grocery_list.remove_at(grocery_list.find(removed_food))
 	SignalBus.ui_update_grocery_list.emit(grocery_list)
 	select_food_spawn()
@@ -69,6 +70,7 @@ func _check_money():
 	if total_needed <= wallet.total_money:
 		wallet.total_money -= total_needed
 		SignalBus.total_points += wallet.total_money + total_needed
+		SignalBus.current_money = wallet.total_money
 		SignalBus.change_money.emit(0)
 		AudioDriver.play_sfx("res://sounds/sound_effects/kaching.ogg")
 		return true
