@@ -10,15 +10,19 @@ func _ready() -> void:
 func _on_reset_button_pressed() -> void:
 		get_tree().change_scene_to_file(\"res://levels/Store/NewStore.tscn\")
 
-func on_winner():
+func on_winner(day, points):
 	self.visible = true
 	%WinnerLabel.visible = true
+	%WinnerLabel.text = \"Day \" + str(day) + \" complete.\\nYou earned \" + str(points) + \" points.\"
+	$VBoxContainer/ResetButton.text = \"Next Day\"
 	var player = get_tree().root.find_child(\"Player\", true, false)
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 	
-func on_game_over() -> void:
+func on_game_over(points) -> void:
 	self.visible = true
 	%GameOverLabel.visible = true
+	%GameOverLabel.text = \"You ran out of time!\\nFinal Score: \" + str(points)
+	$VBoxContainer/ResetButton.text = \"Restart\"
 	var player = get_tree().root.find_child(\"Player\", true, false)
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 "
