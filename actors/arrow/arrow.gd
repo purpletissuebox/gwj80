@@ -4,7 +4,7 @@ var target:Vector3 = Vector3.ZERO
 var player:Camera3D
 
 func _ready():
-	SignalBus.spawn_food.connect(self.update_tgt)
+	SignalBus.arrow_point.connect(self.update_tgt)
 	SignalBus.register_player_cam.connect(self.get_camera)
 
 func _process(_delta):
@@ -18,8 +18,8 @@ func swivel(tgt:Vector3):
 	var dst = local_tgt*camera_coordinate_system
 	self.look_at(dst)
 
-func update_tgt(food):
-	self.target = food.global_position
+func update_tgt(tgt):
+	self.target = tgt.global_position
 
 func get_camera(c):
 	self.player = c

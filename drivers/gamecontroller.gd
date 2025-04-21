@@ -16,6 +16,9 @@ var grocery_prices = {
 	SignalBus.foods.mushroom:17,
 }
 
+@onready var the_chosen_one = $NavigationRegion3D/Checkout6
+@onready var the_chosen_camera = $NavigationRegion3D/Checkout6/Camera3D
+
 var grocery_list = []
 var groceries_acquired = []
 var grocery_total : int
@@ -41,9 +44,13 @@ func register_shelf(shelf):
 
 func select_food_spawn():
 	var target = shelves.pick_random()
-	var chosen_food = grocery_list.pick_random()
-	if chosen_food != null:
+	if len(grocery_list) > 0:
+		var chosen_food = grocery_list.pick_random()
 		SignalBus.spawn_food.emit(target, foods[chosen_food], chosen_food)
+	else:
+		print("No foods left")
+		SignalBus.arrow_point.emit(the_chosen_one)
+		SignalBus.ui_show_food.emit(the_chosen_camera)
 
 func _on_food_removed(removed_food):
 	if removed_food in SignalBus.foods:
@@ -69,8 +76,8 @@ func _check_money():
 		total_needed += grocery_prices[grocery]
 	if total_needed <= wallet.total_money:
 		wallet.total_money -= total_needed
-		SignalBus.total_points += wallet.total_money + total_needed
 		SignalBus.current_money = wallet.total_money
+		SignalBus.total_points += (wallet.total_money / 2) + total_needed
 		SignalBus.change_money.emit(0)
 		AudioDriver.play_sfx("res://sounds/sound_effects/kaching.ogg")
 		return true

@@ -42,6 +42,7 @@ func show_food(shelf, food, food_type):
 		chosen_spawn = spawns.pick_random()
 		chosen_spawn.add_child(shown_food)
 		chosen_spawn.find_child("SpotLight3D").visible = true
+		SignalBus.arrow_point.emit(chosen_spawn)
 		SignalBus.ui_show_food.emit(chosen_spawn.get_child(0))
 		
 func pickup_food(body: Node3D):

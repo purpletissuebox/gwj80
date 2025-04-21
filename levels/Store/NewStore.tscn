@@ -84,6 +84,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.521
 [node name="Checkout6" parent="NavigationRegion3D" instance=ExtResource("11_3uvyu")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.5214, -2.65323, 222.257)
 
+[node name="Camera3D" type="Camera3D" parent="NavigationRegion3D/Checkout6"]
+transform = Transform3D(0.840765, -0.283976, 0.460947, 1.86265e-09, 0.851398, 0.524521, -0.5414, -0.440999, 0.715825, 6.54936, 8.66316, 7.88321)
+
 [node name="Checkout7" parent="NavigationRegion3D" instance=ExtResource("11_3uvyu")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.5214, -2.65323, 65.6199)
 

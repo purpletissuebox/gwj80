@@ -16,6 +16,8 @@ signal register_player_cam
 signal spawn_food(shelf, food)
 signal remove_food(foods)
 
+signal arrow_point(target)
+
 signal ui_show_food(camera)
 signal ui_update_grocery_list(list)
 signal request_grocery_list
