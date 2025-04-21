@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bvilmhlo2ho16" path="res://models/2doorsdown.glb" id="1_4yxlt"]
 [ext_resource type="PackedScene" uid="uid://bvt1t5u0nlxws" path="res://models/backrooms.glb" id="1_x5q0i"]
-[ext_resource type="Script" uid="uid://bvil2tvsh7ve4" path="res://models/door_collision.gd" id="2_1lkkl"]
+[ext_resource type="Script" path="res://models/door_collision.gd" id="2_1lkkl"]
 [ext_resource type="PackedScene" uid="uid://cfmq00p8x12ni" path="res://levels/Store/Wall.tscn" id="2_4j46s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4j46s"]

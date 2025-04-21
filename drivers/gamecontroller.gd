@@ -8,13 +8,20 @@ var foods = [
 	preload("res://models/broccoli.glb"),
 	preload("res://models/mushyfriend.glb"),
 ]
-var grocery_prices = {
-	SignalBus.foods.beans:20,
- 	SignalBus.foods.apple:55,
-	SignalBus.foods.bread:101,
-	SignalBus.foods.broccoli:34,
-	SignalBus.foods.mushroom:17,
-}
+#var grocery_prices = {
+	#SignalBus.foods.beans:20,
+ 	#SignalBus.foods.apple:55,
+	#SignalBus.foods.bread:101,
+	#SignalBus.foods.broccoli:34,
+	#SignalBus.foods.mushroom:17,
+#}
+var grocery_prices = [
+	20,
+ 	55,
+	101,
+	34,
+	17,
+]
 
 @onready var the_chosen_one = $NavigationRegion3D/Checkout6
 @onready var the_chosen_camera = $NavigationRegion3D/Checkout6/Camera3D
@@ -53,8 +60,10 @@ func select_food_spawn():
 		SignalBus.ui_show_food.emit(the_chosen_camera)
 
 func _on_food_removed(removed_food):
-	if removed_food in SignalBus.foods:
+	print(removed_food)
+	if removed_food != -1:
 		groceries_acquired += [removed_food]
+	print(groceries_acquired)
 	grocery_list.remove_at(grocery_list.find(removed_food))
 	SignalBus.ui_update_grocery_list.emit(grocery_list)
 	select_food_spawn()
@@ -75,8 +84,11 @@ func _check_money():
 	for grocery in groceries_acquired:
 		total_needed += grocery_prices[grocery]
 	if total_needed <= wallet.total_money:
+		print(wallet.total_money)
+		print(total_needed)
 		wallet.total_money -= total_needed
 		SignalBus.current_money = wallet.total_money
+		print(SignalBus.current_money)
 		SignalBus.total_points += (wallet.total_money / 2) + total_needed
 		SignalBus.change_money.emit(0)
 		AudioDriver.play_sfx("res://sounds/sound_effects/kaching.ogg")
