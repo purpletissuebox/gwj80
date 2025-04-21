@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://8x44onkslefx"]
+[gd_scene load_steps=9 format=3 uid="uid://8x44onkslefx"]
 
-[ext_resource type="Script" uid="uid://d1htuus8tbdp2" path="res://ui/show_food.gd" id="1_5skvp"]
+[ext_resource type="Script" path="res://ui/show_food.gd" id="1_5skvp"]
+[ext_resource type="Texture2D" uid="uid://kg4kb5ek5tlg" path="res://ui/paper.png" id="2_ue2kl"]
 [ext_resource type="PackedScene" uid="uid://cma4bmnd1th37" path="res://ui/wallet.tscn" id="3_j1g8x"]
 [ext_resource type="PackedScene" uid="uid://br4bfrthtfuqo" path="res://ui/clock.tscn" id="3_wy7nh"]
 [ext_resource type="PackedScene" uid="uid://d1vwvccs1eef" path="res://actors/arrow/arrow.tscn" id="4_wy7nh"]
+[ext_resource type="Script" uid="uid://dgwfk7otmgbhw" path="res://ui/shopping_list/shopping_list.gd" id="5_bmx2r"]
 [ext_resource type="PackedScene" uid="uid://vl6p73ob84fl" path="res://ui/shopping_list/shopping_list.tscn" id="6_fvxh3"]
 [ext_resource type="PackedScene" uid="uid://byu21rqani16k" path="res://ui/game_over_menu.tscn" id="6_wy7nh"]
 
@@ -51,7 +53,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/LeftMenu/CurrentFoodContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(228, 169)
 render_target_update_mode = 4
 script = ExtResource("1_5skvp")
 
@@ -72,7 +74,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/LeftMenu/ArrowContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(228, 128)
 render_target_update_mode = 4
 
 [node name="Node3D" parent="HBoxContainer/LeftMenu/ArrowContainer/SubViewport" instance=ExtResource("4_wy7nh")]
@@ -80,7 +82,40 @@ render_target_update_mode = 4
 [node name="Spacer" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 4.0
+size_flags_stretch_ratio = 3.0
+
+[node name="RightMenu" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="HBoxContainer/RightMenu"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/RightMenu"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource("2_ue2kl")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="ShoppingContainer" type="GridContainer" parent="HBoxContainer/RightMenu/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+columns = 2
+script = ExtResource("5_bmx2r")
+
+[node name="Control2" type="Control" parent="HBoxContainer/RightMenu"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
 
 [node name="GameOverMenu" parent="." instance=ExtResource("6_wy7nh")]
 visible = false
@@ -103,3 +138,4 @@ scale = Vector2(0.1, 0.1)
 
 [node name="ShoppingList" parent="CenterContainer2" instance=ExtResource("6_fvxh3")]
 layout_mode = 2
+script = null

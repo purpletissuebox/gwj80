@@ -8,10 +8,11 @@ offset_bottom = 40.0
 
 [node name="BappleSubViewport" type="SubViewport" parent="."]
 transparent_bg = true
+handle_input_locally = false
 render_target_update_mode = 4
 
 [node name="bapple" parent="BappleSubViewport" instance=ExtResource("1_wkcyu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.94807, 0, -13.4165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0)
 
-[node name="BappleCamera" type="Camera3D" parent="BappleSubViewport"]
-transform = Transform3D(-0.0131943, -0.525485, 0.8507, -2.99257e-09, 0.850774, 0.525531, -0.999913, 0.00693401, -0.0112254, -5.20625, 2.07335, -13.3768)
+[node name="BappleCamera" type="Camera3D" parent="BappleSubViewport/bapple"]
+transform = Transform3D(-0.0131943, -0.525485, 0.8507, -2.99257e-09, 0.850774, 0.525531, -0.999913, 0.00693401, -0.0112254, 2.74182, 2.07335, 0.0396996)

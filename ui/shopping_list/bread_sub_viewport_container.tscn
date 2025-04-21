@@ -12,7 +12,7 @@ handle_input_locally = false
 render_target_update_mode = 4
 
 [node name="bread" parent="BreadSubViewport" instance=ExtResource("1_l827f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.68067, 0, -21.389)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, -40)
 
-[node name="BreadCamera" type="Camera3D" parent="BreadSubViewport"]
-transform = Transform3D(-0.0131943, -0.525485, 0.8507, -2.99257e-09, 0.850774, 0.525531, -0.999913, 0.00693401, -0.0112254, -3.39469, 3.22546, -20.307)
+[node name="BreadCamera" type="Camera3D" parent="BreadSubViewport/bread"]
+transform = Transform3D(-0.0131943, -0.525485, 0.8507, -2.99257e-09, 0.850774, 0.525531, -0.999913, 0.00693401, -0.0112254, 4.28598, 3.22546, 1.082)

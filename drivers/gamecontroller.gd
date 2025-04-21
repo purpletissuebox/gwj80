@@ -19,13 +19,15 @@ var grocery_list = []
 var groceries_acquired = []
 var grocery_total : int
 
+var current_day = 1
+
 func _ready():
 	SignalBus.register_shelf.connect(register_shelf)
 	SignalBus.remove_food.connect(_on_food_removed)
 	SignalBus.checkout.connect(on_checkout)
 	SignalBus.request_grocery_list.connect(send_groceries)
 	SignalBus.register_shelf.emit(-1)
-	grocery_total = randi_range(6,10)
+	grocery_total = current_day*4
 	_generate_grocery_list()
 	select_food_spawn()
 
@@ -35,8 +37,9 @@ func register_shelf(shelf):
 
 func select_food_spawn():
 	var target = shelves.pick_random()
-	var chosen_food = range(5).pick_random()
-	SignalBus.spawn_food.emit(target, foods[chosen_food], chosen_food)
+	var chosen_food = grocery_list.pick_random()
+	if chosen_food != null:
+		SignalBus.spawn_food.emit(target, foods[chosen_food], chosen_food)
 
 func _on_food_removed(removed_food):
 	groceries_acquired += [removed_food]

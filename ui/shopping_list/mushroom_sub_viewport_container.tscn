@@ -12,7 +12,7 @@ handle_input_locally = false
 render_target_update_mode = 4
 
 [node name="mushyfriend" parent="MushroomSubViewport" instance=ExtResource("1_r84v3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.68067, 0, -39.724)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, -80)
 
-[node name="MushroomCamera" type="Camera3D" parent="MushroomSubViewport"]
-transform = Transform3D(-0.0131943, -0.525485, 0.8507, -2.99257e-09, 0.850774, 0.525531, -0.999913, 0.00693401, -0.0112254, -2.46946, 3.79385, -39.718)
+[node name="MushroomCamera" type="Camera3D" parent="MushroomSubViewport/mushyfriend"]
+transform = Transform3D(-0.0131943, -0.525485, 0.8507, -2.99257e-09, 0.850774, 0.525531, -0.999913, 0.00693401, -0.0112254, 5.21121, 3.79385, 0.00600052)

@@ -1,7 +1,5 @@
 extends Control
 
-var grid_container: GridContainer
-
 var food_viewports = {
 	SignalBus.foods.beans:preload("res://ui/shopping_list/beans_sub_viewport_container.tscn"),
 	SignalBus.foods.apple:preload("res://ui/shopping_list/bapple_sub_viewport_container.tscn"),
@@ -10,13 +8,16 @@ var food_viewports = {
 	SignalBus.foods.mushroom:preload("res://ui/shopping_list/mushroom_sub_viewport_container.tscn"),
 }
 func _ready() -> void:
-	grid_container = GridContainer.new()
-	grid_container.columns = 2
-	get_child(0).add_child(grid_container)
 	SignalBus.ui_update_grocery_list.connect(on_grocery_list_update)
 	SignalBus.request_grocery_list.emit()
 	
 func on_grocery_list_update(list):
+	for child in get_children():
+		child.queue_free()
+		
 	for item in list:
-		var vp = food_viewports[item].instantiate()
-		grid_container.add_child(vp)
+		var food_view:SubViewportContainer = food_viewports[item].instantiate()
+		food_view.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		food_view.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		food_view.stretch = true
+		add_child(food_view)
