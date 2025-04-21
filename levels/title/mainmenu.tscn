@@ -1,11 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://danqr3275vjwp"]
+[gd_scene load_steps=5 format=3 uid="uid://danqr3275vjwp"]
 
 [ext_resource type="Script" uid="uid://bpgwh1imu01dx" path="res://levels/title/mainmenu.gd" id="1_1apnq"]
+[ext_resource type="Texture2D" uid="uid://k6mrkxmjs0nr" path="res://ui/title.png" id="2_br4jn"]
 [ext_resource type="Texture2D" uid="uid://bxok8a7jrbvn" path="res://levels/title/Volume-Silhouette-PNG-3284640703.png" id="2_e25x5"]
-[ext_resource type="Texture2D" uid="uid://ce672a6wkxn8j" path="res://levels/title/screenwriting-101.png" id="2_j2ixq"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_j2ixq"]
-font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_e25x5"]
 font_size = 24
@@ -43,13 +40,13 @@ theme_override_constants/margin_bottom = 50
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 75
-text = "Attention Shoppers"
-horizontal_alignment = 1
-vertical_alignment = 1
+mouse_filter = 2
+texture = ExtResource("2_br4jn")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -107,7 +104,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Credits" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -135,13 +131,15 @@ grow_vertical = 2
 [node name="Control2" type="Control" parent="Credits/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
 
-[node name="Label" type="Label" parent="Credits/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Credits/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 1
-text = "Attention Shoppers"
-label_settings = SubResource("LabelSettings_j2ixq")
-horizontal_alignment = 1
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("2_br4jn")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Label2" type="Label" parent="Credits/VBoxContainer"]
 layout_mode = 2
@@ -195,7 +193,8 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="Credits/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "Borkf (3D Models, Shoppers)
-harrisonof (Clock Art)"
+harrisonof (Clock Art)
+purpletissuebox (Logo)"
 horizontal_alignment = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="Credits/VBoxContainer/HBoxContainer"]
@@ -211,25 +210,9 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="Credits/VBoxContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 text = "DarkMatterTsunami (PA System)
-RagnarokerXIII (PA System / Shoppers)"
+RagnarokerXIII (PA System / Shoppers)
+purpletissuebox (Background Music)"
 horizontal_alignment = 1
-
-[node name="VBoxContainer4" type="VBoxContainer" parent="Credits/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="Credits/VBoxContainer/HBoxContainer/VBoxContainer4"]
-layout_mode = 2
-text = "Wildcard"
-label_settings = SubResource("LabelSettings_e25x5")
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Credits/VBoxContainer/HBoxContainer/VBoxContainer4"]
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("2_j2ixq")
-expand_mode = 4
-stretch_mode = 5
 
 [node name="Control" type="Control" parent="Credits/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -239,6 +222,7 @@ size_flags_stretch_ratio = 0.25
 [node name="HBoxContainer2" type="HBoxContainer" parent="Credits/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
 
 [node name="Control" type="Control" parent="Credits/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
