@@ -31,7 +31,7 @@ func _ready():
 	SignalBus.request_grocery_list.connect(send_groceries)
 	SignalBus.register_shelf.emit(-1)
 	SignalBus.current_day += 1
-	grocery_total = SignalBus.current_day#*4
+	grocery_total = SignalBus.current_day*4
 	_generate_grocery_list()
 	select_food_spawn()
 

@@ -28,7 +28,8 @@ func _ready():
 	self.engine_power = (top_speed/zero_to_sixty)/(acc/100)
 
 func _exit_tree() -> void:
-	engine_sound.stop()
+	if engine_sound:
+		engine_sound.stop()
 
 func _physics_process(delta: float) -> void:
 	var ratio = abs(self.global_basis.x.dot(self.linear_velocity)/self.top_speed)

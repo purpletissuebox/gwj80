@@ -24,6 +24,10 @@ func _ready() -> void:
 	if timer:
 		degPerTick = 360/timer.wait_time
 
+func _exit_tree() -> void:
+	if prevAudioStream:
+		prevAudioStream.stop()
+
 func _process(delta: float) -> void:
 	clock_arrow_anchor.rotation_degrees += degPerTick*delta
 

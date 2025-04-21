@@ -11,6 +11,10 @@ const scrape_sounds:Array[String] = [
 	"res://actors/player/sounds/scrape4.mp3",
 ]
 
+func _exit_tree() -> void:
+	if scrape:
+		scrape.stop()
+
 func sparks_on(_body):
 	if num_bodies == 0:
 		gpu_particles_3d.emitting = true
