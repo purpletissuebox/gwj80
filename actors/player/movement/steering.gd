@@ -23,7 +23,7 @@ func friction():
 func steer():
 	var forward_vel:float = car.linear_velocity.dot(car.global_basis.x)
 	var upward:Vector3 = car.global_basis.y
-	var input:float = Input.get_axis("ui_right", "ui_left")
+	var input:float = Input.get_axis("turn_right", "turn_left")
 	var ratio:float = forward_vel/car.top_speed
 	var steer_efficiency:float = car.steer_curve.sample(abs(ratio))
 	var desired_steer_rate:float = steer_efficiency*car.max_steer_rate*input
