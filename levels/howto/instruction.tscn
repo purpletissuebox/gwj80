@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgxwoa5ir8kim"]
+
+[ext_resource type="Script" uid="uid://6e7gab4gctck" path="res://levels/howto/instruction.gd" id="1_f43w5"]
+
+[node name="Instruction" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.627451)
+script = ExtResource("1_f43w5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+text = "Welcome to Attention, Shoppers! The goal of the game is to repeatedly collect groceries under a strict time limit. Your final score is how much money you collected before you lost! 
+
+Mouse over any of the highlighted regions to learn about that part of the game. To return to the main menu, click the button at the top!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "OK"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="ded"]

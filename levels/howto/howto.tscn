@@ -1,0 +1,118 @@
+[gd_scene load_steps=5 format=3 uid="uid://3au5gv15t1w7"]
+
+[ext_resource type="Texture2D" uid="uid://yvfun7xh5cb0" path="res://levels/howto/screencap.png" id="1_y5dn0"]
+[ext_resource type="Script" uid="uid://cqp6ijxh4xhyu" path="res://levels/howto/howto.gd" id="1_yqjuq"]
+[ext_resource type="PackedScene" uid="uid://cgxwoa5ir8kim" path="res://levels/howto/instruction.tscn" id="2_5na02"]
+[ext_resource type="PackedScene" uid="uid://gaujyagl4wgk" path="res://levels/howto/tooltip.tscn" id="3_wtwha"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqjuq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_y5dn0")
+
+[node name="Tooltip" parent="." instance=ExtResource("3_wtwha")]
+layout_mode = 0
+offset_top = 171.0
+offset_right = 147.0
+offset_bottom = 498.0
+tip = "[ Money Display ]
+
+Cash collected from other shoppers will appear here!"
+
+[node name="Tooltip2" parent="." instance=ExtResource("3_wtwha")]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 517.0
+offset_right = 207.0
+offset_bottom = 644.0
+tip = "[ Navigation Arrow ]
+Constantly rotates to point to your current target food item."
+
+[node name="Tooltip3" parent="." instance=ExtResource("3_wtwha")]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -6.0
+offset_right = 231.0
+offset_bottom = 172.0
+tip = "[ Target Food Display ]
+
+Shows the next food item that you need to collect. Look for it on the shelves!"
+
+[node name="Tooltip4" parent="." instance=ExtResource("3_wtwha")]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 131.0
+offset_right = 913.0
+offset_bottom = 362.0
+tip = "[ Shoppers ]
+
+Provides money when hit. Each is worth a different amount!"
+
+[node name="Tooltip5" parent="." instance=ExtResource("3_wtwha")]
+layout_mode = 0
+offset_left = 922.0
+offset_top = 184.0
+offset_right = 1154.0
+offset_bottom = 557.0
+tip = "[ Grocery List ]
+
+Collect every item to complete each level. Progressively gets longer with each day. How far can you get?"
+
+[node name="Tooltip6" parent="." instance=ExtResource("3_wtwha")]
+layout_mode = 0
+offset_left = 990.0
+offset_top = -1.0
+offset_right = 1153.0
+offset_bottom = 130.0
+tip = "[ Clock ]
+Shows remaining time. If it runs out, you lose!"
+
+[node name="Tooltip7" parent="." instance=ExtResource("3_wtwha")]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 321.0
+offset_right = 677.0
+offset_bottom = 617.0
+tip = "[ Grocery Cart ]
+
+That's you! Use the arrow keys or WASD to drive around the store."
+
+[node name="Tooltip8" parent="." instance=ExtResource("3_wtwha")]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 176.0
+offset_right = 464.0
+offset_bottom = 393.0
+tip = "[ Checkout ]
+
+Touch any one of these areas after completing the shopping list to finish the day!"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.5
+offset_right = 20.5
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
+text = "EXIT"
+
+[node name="Instruction" parent="." instance=ExtResource("2_5na02")]
+layout_mode = 1
+
+[connection signal="pressed" from="Button" to="." method="go_home"]
