@@ -4,7 +4,7 @@ extends Node
 
 func _ready():
 	SignalBus.change_lvl.connect(self.load_new_lvl)
-	SignalBus.change_lvl.emit("res://levels/logo/logo.tscn", 1.0)
+	SignalBus.change_lvl.emit("res://levels/loading/load_screen.tscn", 0)
 
 func load_new_lvl(filepath:String, fade_time:float):
 	var fadeout = create_tween()
