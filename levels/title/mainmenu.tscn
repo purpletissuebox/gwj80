@@ -72,6 +72,11 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "CREDITS"
 
+[node name="Button4" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "HOW TO PLAY"
+
 [node name="Button3" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -242,6 +247,7 @@ size_flags_vertical = 3
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button" to="." method="start_game"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button2" to="." method="open_credits"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button4" to="." method="show_help"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button3" to="." method="quit_game"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/VSlider" to="." method="_on_vol_changed"]
 [connection signal="pressed" from="Credits/VBoxContainer/HBoxContainer2/Button" to="." method="close_credits"]
