@@ -1,38 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddnrqolceud28"]
+[gd_scene load_steps=7 format=3 uid="uid://ddnrqolceud28"]
 
 [ext_resource type="Texture2D" uid="uid://dtfd5bukc6ql3" path="res://actors/player/gfx/spark.png" id="1_8xi65"]
 [ext_resource type="Script" uid="uid://ct1tuy1npud88" path="res://actors/player/movement/suspension.gd" id="1_ne7tj"]
+[ext_resource type="Material" uid="uid://c2f3k5e63nyan" path="res://levels/loading/particles/crash.tres" id="2_kmymc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xxgh6"]
-
-[sub_resource type="Curve" id="Curve_ne7tj"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_8ocue"]
-_limits = [0.0, 5.0, 0.0, 1.0]
-_data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_6p6xw"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_lnmwf"]
-curve_x = SubResource("Curve_ne7tj")
-curve_y = SubResource("Curve_8ocue")
-curve_z = SubResource("Curve_6p6xw")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8xi65"]
-particle_flag_align_y = true
-spread = 180.0
-initial_velocity_min = 20.0
-initial_velocity_max = 25.0
-gravity = Vector3(0, -30, 0)
-scale_min = 0.15
-scale_max = 0.5
-scale_curve = SubResource("CurveXYZTexture_lnmwf")
-color = Color(1, 0.819608, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kmymc"]
 transparency = 1
@@ -59,7 +31,7 @@ emitting = false
 amount = 16
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource("ParticleProcessMaterial_8xi65")
+process_material = ExtResource("2_kmymc")
 draw_pass_1 = SubResource("QuadMesh_8ocue")
 
 [connection signal="body_entered" from="Area3D" to="." method="do_sparks"]

@@ -1,0 +1,8 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://cu7kkcvwmlmjb"]
+
+[resource]
+emission_shape = 2
+emission_sphere_radius = 1.0
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = 34.6
+gravity = Vector3(0, 0, 0)

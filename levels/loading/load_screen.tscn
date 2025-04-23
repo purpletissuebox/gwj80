@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://didpdry20sxvg"]
+
+[ext_resource type="Script" uid="uid://b3a1h8lthglbv" path="res://levels/loading/load_screen.gd" id="1_1h0u1"]
+[ext_resource type="Script" uid="uid://ddktqery1y4b8" path="res://levels/loading/cache.gd" id="1_p61hv"]
+[ext_resource type="Material" uid="uid://cu7kkcvwmlmjb" path="res://levels/loading/particles/dollars.tres" id="3_pdiut"]
+[ext_resource type="TextMesh" uid="uid://ck7i1jprk0rw7" path="res://levels/loading/particles/mesh.tres" id="4_0w47m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1h0u1"]
+font_size = 64
+
+[node name="LoadScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1h0u1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.5
+offset_top = -72.5
+offset_right = 171.5
+offset_bottom = 72.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "LOADING..."
+label_settings = SubResource("LabelSettings_1h0u1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "DONE!"
+horizontal_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("emitter")]
+script = ExtResource("1_p61hv")
+emitter = NodePath("GPUParticles3D")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="CanvasLayer"]
+emitting = false
+amount = 1
+lifetime = 0.1
+one_shot = true
+process_material = ExtResource("3_pdiut")
+draw_pass_1 = ExtResource("4_0w47m")
