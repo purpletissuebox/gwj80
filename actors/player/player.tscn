@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://duh3efbyiw3gp"]
+[gd_scene load_steps=12 format=3 uid="uid://duh3efbyiw3gp"]
 
 [ext_resource type="Script" uid="uid://bsa3o7udfhus5" path="res://actors/player/player.gd" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://chcd5s5f8b16b" path="res://actors/player/movement/engine.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://bwf3jgvht70ru" path="res://actors/player/movement/steering.gd" id="4_yw30f"]
-[ext_resource type="Script" path="res://actors/player/camera.gd" id="5_6p1w3"]
+[ext_resource type="Script" uid="uid://cpor8wrqsu60t" path="res://actors/player/camera.gd" id="5_6p1w3"]
 [ext_resource type="PackedScene" uid="uid://ddnrqolceud28" path="res://actors/player/movement/wheel.tscn" id="5_15y17"]
 [ext_resource type="PackedScene" uid="uid://cy15gr5wa02xl" path="res://actors/player/gfx/cart.tscn" id="6_15y17"]
 
@@ -22,9 +22,6 @@ point_count = 2
 metadata/_snap_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rkbax"]
-size = Vector3(6, 1, 4)
-
-[sub_resource type="BoxMesh" id="BoxMesh_bop6h"]
 size = Vector3(6, 1, 4)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_yw30f"]
@@ -46,10 +43,6 @@ wheels = [NodePath("Wheels/RayCast3D"), NodePath("Wheels/RayCast3D2"), NodePath(
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_rkbax")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-visible = false
-mesh = SubResource("BoxMesh_bop6h")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 1, 0)
