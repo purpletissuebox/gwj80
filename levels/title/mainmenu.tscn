@@ -249,5 +249,5 @@ size_flags_vertical = 3
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button2" to="." method="open_credits"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button4" to="." method="show_help"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button3" to="." method="quit_game"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/VSlider" to="." method="_on_vol_changed"]
+[connection signal="drag_ended" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/VSlider" to="." method="update_volume"]
 [connection signal="pressed" from="Credits/VBoxContainer/HBoxContainer2/Button" to="." method="close_credits"]

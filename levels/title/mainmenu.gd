@@ -28,9 +28,7 @@ func quit_game():
 func show_help():
 	SignalBus.change_lvl.emit("res://levels/howto/howto.tscn", 0)
 
-func _on_vol_changed(value: float) -> void:
-	AudioDriver.global_bgm_volume = value
-	AudioDriver.global_sfx_volume = value
-	if sound_cooldown <= 0:
-		sound_cooldown += 0.5
-		AudioDriver.play_sfx("res://levels/title/volume.mp3", 0.7)
+func update_volume(_x):
+	AudioDriver.global_bgm_volume = vol_slider.ratio
+	AudioDriver.global_sfx_volume = vol_slider.ratio
+	AudioDriver.play_sfx("res://levels/title/volume.mp3", 0.7)
